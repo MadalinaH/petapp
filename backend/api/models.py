@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Pet(models.Model):
@@ -9,6 +10,7 @@ class Pet(models.Model):
         (MALE, 'Male'),
     ]
 
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, null=False)
     sex = models.CharField(max_length=1, null=False, choices=PET_SEX_CHOICES, default='Female')
     breed = models.CharField(max_length=100, null=False)
@@ -27,9 +29,10 @@ class Appointment(models.Model):
     vet_id = models.ForeignKey(VetOffice, on_delete=models.CASCADE)
     date = models.DateField(null=False)
     time = models.TimeField(null=False)
-    notes = models.TextField()
+    notes = models.TextField(null=True)
 
 class Reminder(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     appointment_id = models.ForeignKey(Appointment, on_delete=models.CASCADE)
     date = models.DateField(null=False)
     time = models.TimeField(null=False)
