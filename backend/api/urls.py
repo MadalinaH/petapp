@@ -2,9 +2,10 @@ from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
 from rest_framework import routers
-from .views import PetViewSet, VetOfficeViewSet, AppointmentViewSet, ReminderViewSet
+from .views import UserViewSet, PetViewSet, VetOfficeViewSet, AppointmentViewSet, ReminderViewSet
 
 router = routers.DefaultRouter()
+router.register('users', UserViewSet)
 router.register('pets', PetViewSet)
 router.register('vet_offices', VetOfficeViewSet)
 router.register('appointments', AppointmentViewSet)
