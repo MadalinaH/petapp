@@ -5,45 +5,45 @@ backend/env
 # Frontend
 # compiled output
 /dist
-frontend/tmp
-frontend/out-tsc
+frontend/petappgui/tmp
+frontend/petappgui/out-tsc
 # Only exists if Bazel was run
-frontend/bazel-out
+frontend/petappgui/bazel-out
 
 # dependencies
-frontend/node_modules
+frontend/petappgui/node_modules
 
 # profiling files
-frontend/chrome-profiler-events*.json
-frontend/speed-measure-plugin*.json
+frontend/petappgui/chrome-profiler-events*.json
+frontend/petappgui/speed-measure-plugin*.json
 
 # IDEs and editors
-frontend/.idea
-frontend/.project
-frontend/.classpath
-frontend/.c9/
-frontend/*.launch
-frontend/.settings/
-frontend/*.sublime-workspace
+frontend/petappgui/.idea
+frontend/petappgui/.project
+frontend/petappgui/.classpath
+frontend/petappgui/.c9/
+frontend/petappgui/*.launch
+frontend/petappgui/.settings/
+frontend/petappgui/*.sublime-workspace
 
 # IDE - VSCode
-frontend/.vscode/*
-frontend/!.vscode/settings.json
-frontend/!.vscode/tasks.json
-frontend/!.vscode/launch.json
-frontend/!.vscode/extensions.json
-frontend/.history/*
+frontend/petappgui/.vscode/*
+frontend/petappgui/!.vscode/settings.json
+frontend/petappgui/!.vscode/tasks.json
+frontend/petappgui/!.vscode/launch.json
+frontend/petappgui/!.vscode/extensions.json
+frontend/petappgui/.history/*
 
 # misc
-frontend/.sass-cache
-frontend/connect.lock
-frontend/coverage
-frontend/libpeerconnection.log
-frontend/npm-debug.log
-frontend/yarn-error.log
-frontend/testem.log
-frontend/typings
+frontend/petappgui/.sass-cache
+frontend/petappgui/connect.lock
+frontend/petappgui/coverage
+frontend/petappgui/libpeerconnection.log
+frontend/petappgui/npm-debug.log
+frontend/petappgui/yarn-error.log
+frontend/petappgui/testem.log
+frontend/petappgui/typings
 
 # System Files
-frontend/.DS_Store
-frontend/Thumbs.db
+frontend/petappgui/.DS_Store
+frontend/petappgui/Thumbs.db
