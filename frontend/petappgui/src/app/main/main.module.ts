@@ -6,6 +6,8 @@ import { PetListComponent } from './pet-list/pet-list.component';
 import { PetInfoComponent } from './pet-info/pet-info.component';
 import { HomeComponent } from './home/home.component';
 
+import { ApiService } from '../api.service';
+
 const routes: Routes = [];
 
 @NgModule({
@@ -14,6 +16,7 @@ const routes: Routes = [];
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [ApiService]
 })
 export class MainModule { }
