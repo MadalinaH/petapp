@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Pet } from '../../models/pet';
 import { ApiService } from '../../api.service';
 @Component({
   selector: 'app-pet-list',
@@ -8,16 +8,18 @@ import { ApiService } from '../../api.service';
 })
 export class PetListComponent implements OnInit {
 
-  pets: any = [];
+  pets: Pet[];
 
-  constructor(
-    private apiService: ApiService
-  ) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
+    this.getPets();
+  }
+
+  getPets(): void {
     this.apiService.getPets().subscribe(
-      data =>  {
-        this.pets = data;
+      pets =>  {
+        this.pets = pets;
       },
       error => {
         console.log(error);

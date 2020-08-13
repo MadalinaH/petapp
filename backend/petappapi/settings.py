@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'corsheaders',
     'django.contrib.admin',
@@ -77,7 +76,6 @@ WSGI_APPLICATION = 'petappapi.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -85,11 +83,11 @@ DATABASES = {
     }
 }
 
-#REST_FRAMEWORK = {
+# REST_FRAMEWORK = {
 #    'DEFAULT_PERMISSION_CLASSES': {
 #       'rest_framework.permissions.IsAuthenticated',
 #     }
-#}
+# }
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:4200"
@@ -97,7 +95,6 @@ CORS_ORIGIN_WHITELIST = [
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -116,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -130,5 +126,4 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_URL = '/static/'
