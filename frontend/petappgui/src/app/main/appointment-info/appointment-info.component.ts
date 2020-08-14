@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../api.service';
-import { Pet } from '../../models/pet';
+import { Appointment } from '../../models/appointment';
 
 @Component({
-  selector: 'app-pet-info',
-  templateUrl: './pet-info.component.html',
-  styleUrls: ['./pet-info.component.css']
+  selector: 'app-appointment-info',
+  templateUrl: './appointment-info.component.html',
+  styleUrls: ['./appointment-info.component.css']
 })
-export class PetInfoComponent implements OnInit {
+export class AppointmentInfoComponent implements OnInit {
 
-  pet: Pet = {} as Pet;
+  appointment: Appointment = {} as Appointment;
   selectedId: number;
 
   constructor(
@@ -20,7 +20,7 @@ export class PetInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.getSelectedId();
-    this.getPet();
+    this.getAppointment();
   }
 
   getSelectedId(): void {
@@ -29,10 +29,10 @@ export class PetInfoComponent implements OnInit {
     });
   }
 
-  getPet(): void {
-    this.apiService.getPet(this.selectedId).subscribe(
-      pet =>  {
-        this.pet = pet;
+  getAppointment() {
+    this.apiService.getAppointment(this.selectedId).subscribe(
+      appointment =>  {
+        this.appointment = appointment;
       },
       error => {
         console.log(error);

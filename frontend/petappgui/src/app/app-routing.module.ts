@@ -7,6 +7,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HomeComponent } from './main/home/home.component';
 import { PetListComponent } from './main/pet-list/pet-list.component';
 import { PetInfoComponent } from './main/pet-info/pet-info.component';
+import { AppointmentListComponent } from './main/appointment-list/appointment-list.component';
+import { AppointmentInfoComponent } from './main/appointment-info/appointment-info.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -20,7 +22,9 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'pets', component: PetListComponent },
-      { path: 'pet/:id', component: PetInfoComponent }
+      { path: 'pet-info', component: PetInfoComponent },
+      { path: 'appointments', component: AppointmentListComponent },
+      { path: 'appointment-info', component: AppointmentInfoComponent }
     ]}
 ];
 

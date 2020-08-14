@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Pet } from './models/pet';
+import { Appointment } from './models/appointment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +15,26 @@ export class ApiService {
     Authorization: 'Token 3ea9fe47b035fe3e987dbf113e94e8e21c75cf07'
   });
 
-  constructor(
-    private httpClient: HttpClient
-  ) { }
+  constructor(private httpClient: HttpClient) { }
 
   getPets() {
-    return this.httpClient.get<Pet[]>(this.baseUrl + 'pets/', {headers: this.headers});
+    const currentUrl = this.baseUrl + 'pets';
+    return this.httpClient.get<Pet[]>(currentUrl, {headers: this.headers});
   }
 
   getPet(id) {
-    return this.httpClient.get<Pet>(this.baseUrl + 'pets/' + id + '/', {headers: this.headers});
+    const currentUrl = this.baseUrl + 'pets/' + id;
+    return this.httpClient.get<Pet>(currentUrl, {headers: this.headers});
+  }
+
+  getAppointments() {
+    const currentUrl = this.baseUrl + 'appointments';
+    return this.httpClient.get<Appointment[]>(currentUrl, {headers: this.headers});
+  }
+
+  getAppointment(id) {
+    const currentUrl = this.baseUrl + 'appointments/' + id;
+    return this.httpClient.get<Appointment>(currentUrl, {headers: this.headers});
   }
 
 }
