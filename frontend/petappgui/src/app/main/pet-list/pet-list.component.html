@@ -1,7 +1,6 @@
 <div *ngFor="let pet of pets">
   <a routerLink="/main/pet-info"
-     [queryParams]="{selectedId: pet.id}"
-     skipLocationChange>
+     [queryParams]="{selectedId: pet.id}">
       <h3>{{pet.name}}</h3>
   </a>
 </div>

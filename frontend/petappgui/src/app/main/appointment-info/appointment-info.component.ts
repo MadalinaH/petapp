@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { Appointment } from '../../models/appointment';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-appointment-info',
@@ -15,7 +16,8 @@ export class AppointmentInfoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +31,7 @@ export class AppointmentInfoComponent implements OnInit {
     });
   }
 
-  getAppointment() {
+  getAppointment(): void {
     this.apiService.getAppointment(this.selectedId).subscribe(
       appointment =>  {
         this.appointment = appointment;
@@ -38,6 +40,10 @@ export class AppointmentInfoComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }

@@ -1,7 +1,6 @@
 <div *ngFor="let appointment of appointments">
   <a routerLink="/main/appointment-info"
-     [queryParams]="{selectedId: appointment.id}"
-     skipLocationChange>
+     [queryParams]="{selectedId: appointment.id}">
       <h3>{{appointment.date}}</h3>
       <h3>{{appointment.time}}</h3>
       <h3>{{appointment.pet_id}}</h3>

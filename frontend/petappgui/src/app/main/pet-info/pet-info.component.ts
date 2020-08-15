@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { Pet } from '../../models/pet';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-pet-info',
@@ -15,7 +16,8 @@ export class PetInfoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +40,10 @@ export class PetInfoComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
