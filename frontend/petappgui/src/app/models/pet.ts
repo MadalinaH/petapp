@@ -7,4 +7,5 @@ export interface Pet {
     date_of_birth:Date;
     microchip_no: string;
     passport_no: string;
+    pet_photo: string;
 }

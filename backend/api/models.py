@@ -9,6 +9,9 @@ class Pet(models.Model):
         (FEMALE, 'Female'),
         (MALE, 'Male'),
     ]
+    # investigate instance
+    def get_upload_path(instance, filename):
+        return 'pets/%s/%s' % (instance.user_id, filename)
 
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, null=False)
@@ -17,6 +20,7 @@ class Pet(models.Model):
     date_of_birth = models.DateField(null=False) # TODO add constraint date cannot be in the future
     microchip_no = models.CharField(max_length=50, null=False)
     passport_no = models.CharField(max_length=50)
+    pet_photo = models.ImageField(upload_to=get_upload_path, blank=True, null=True)
 
 class VetOffice(models.Model):
     name = models.CharField(max_length=50, null=False)
