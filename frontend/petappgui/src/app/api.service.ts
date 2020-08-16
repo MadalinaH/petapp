@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Pet } from './models/pet';
 import { Appointment } from './models/appointment';
+import { Vet } from './models/vet';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,11 @@ export class ApiService {
   getAppointment(id) {
     const currentUrl = this.baseUrl + 'appointments/' + id;
     return this.httpClient.get<Appointment>(currentUrl, {headers: this.headers});
+  }
+
+  getVets() {
+    const currentUrl = this.baseUrl + 'vet_offices';
+    return this.httpClient.get<Vet[]>(currentUrl, {headers: this.headers});
   }
 
 }
