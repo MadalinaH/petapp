@@ -1,6 +1,6 @@
 # petapp
-Web application for pet health management
-Manages medication and vet visits (CRUD) for pets beloging to users
+Web application for pet health management\
+Manages medication and vet visits (CRUD) for pets belonging to users\
 Main features:
 - authentication system (sign up, login, logout)
 - model relationships
