@@ -8,5 +8,5 @@ Main features:
 - random dog fact from public API
 
 ## Technology stack
-Backend(API): Django + Django REST Framework + SQLite3 Database
+Backend(API): Django + Django REST Framework + SQLite3 Database\
 Frontend: Angular 9 + Bootstrap 4
