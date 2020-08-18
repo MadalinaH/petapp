@@ -1,4 +1,4 @@
-# petapp
+# petapp (work in progress)
 Web application for pet health management\
 Manages medication and vet visits (CRUD) for pets belonging to users\
 Main features:
