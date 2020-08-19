@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { LandingPageComponent } from './auth/landing-page/landing-page.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -11,6 +10,7 @@ import { AppointmentListComponent } from './main/appointment-list/appointment-li
 import { AppointmentInfoComponent } from './main/appointment-info/appointment-info.component';
 import { AppointmentFormComponent } from './main/appointment-form/appointment-form.component';
 
+// add 404 path
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'auth',
@@ -32,13 +32,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-
   imports: [RouterModule.forRoot(routes)],
-
   exports: [RouterModule]
-
 })
 
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule {}

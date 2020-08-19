@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { ApiService } from '../../api.service';
 import { Pet } from '../../models/pet';
 import { Vet } from '../../models/vet';
-import { ApiService } from '../../api.service';
-import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-appointment-form',
@@ -58,7 +58,7 @@ export class AppointmentFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('Bleh');
+    console.log('');
   }
 
 }

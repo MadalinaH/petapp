@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 export class PetInfoComponent implements OnInit {
 
   pet: Pet = {} as Pet;
+  
   selectedId: number;
 
   constructor(

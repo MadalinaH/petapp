@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Pet } from '../../models/pet';
 import { ApiService } from '../../api.service';
+import { Pet } from '../../models/pet';
+
 @Component({
   selector: 'app-pet-list',
   templateUrl: './pet-list.component.html',

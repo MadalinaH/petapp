@@ -12,6 +12,7 @@ import { Location } from '@angular/common';
 export class AppointmentInfoComponent implements OnInit {
 
   appointment: Appointment = {} as Appointment;
+
   selectedId: number;
 
   constructor(

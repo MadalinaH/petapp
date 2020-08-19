@@ -1,19 +1,22 @@
 import { Routes, RouterModule } from '@angular/router';
-
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 import { CommonModule } from '@angular/common';
-import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const routes: Routes = [];
 
 @NgModule({
-  declarations: [LandingPageComponent, LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, LandingPageComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [CookieService]
 })
-export class AuthModule { }
+export class AuthModule {}

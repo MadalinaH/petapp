@@ -11,7 +11,7 @@ export class AppointmentListComponent implements OnInit {
 
   appointments: Appointment[];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.getAppointments();

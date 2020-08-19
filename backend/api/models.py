@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class Pet(models.Model):
-    # to provide more options for pet species because not just dog app
+    # to provide more options for pet species (not just dog)
     FEMALE = 'F'
     MALE = 'M'
     PET_SEX_CHOICES = [
