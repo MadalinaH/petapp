@@ -53,6 +53,13 @@ export class ApiService {
 
   }
 
+  registerUser(registerData) {
+    const body = JSON.stringify(registerData);
+    const currentUrl = this.baseUrl + 'api/users/';
+    return this.httpClient.post(currentUrl, body, {headers: this.headers});
+
+  }
+
   getAuthHeaders() {
     const token = this.cookieService.get('petapp-token');
     return new HttpHeaders({
