@@ -28,6 +28,7 @@
     <div class="form-group">
       <label for="confirm_password"> Confirm password</label>
       <input type="password" class="form-control" id="confirm_password" formControlName="confirm_password">
+      <p *ngIf="registerForm.hasError('passwordsDontMatch')">Passwords must match.</p>
     </div>
     <button type="submit" class="btn btn-primary">Register</button>
   </form>

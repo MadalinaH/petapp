@@ -44,6 +44,9 @@ export class RegisterComponent implements OnInit {
     if(control.get('password').value !== control.get('confirm_password').value) {
       return {passwordsDontMatch: true};
     }
+    else {
+      return null;
+    }
   }
 
   onRegister(): void {
