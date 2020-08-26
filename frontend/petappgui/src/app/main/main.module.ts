@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { PetInfoComponent } from './pet-info/pet-info.component';
 import { PetListComponent } from './pet-list/pet-list.component';
 import { ApiService } from '../api.service';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [];
 
@@ -24,7 +25,8 @@ const routes: Routes = [];
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    SharedModule
   ],
   exports: [RouterModule],
   providers: [ApiService]

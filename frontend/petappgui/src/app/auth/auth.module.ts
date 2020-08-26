@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [];
 
@@ -14,7 +15,8 @@ const routes: Routes = [];
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    SharedModule
   ],
   exports: [RouterModule],
   providers: [CookieService]
