@@ -9,6 +9,7 @@ import { PetInfoComponent } from './main/pet-info/pet-info.component';
 import { AppointmentListComponent } from './main/appointment-list/appointment-list.component';
 import { AppointmentInfoComponent } from './main/appointment-info/appointment-info.component';
 import { AppointmentFormComponent } from './main/appointment-form/appointment-form.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 // add 404 path
 const routes: Routes = [
@@ -28,7 +29,8 @@ const routes: Routes = [
       { path: 'appointment-info', component: AppointmentInfoComponent },
       { path: 'add-appointment', component: AppointmentFormComponent },
       { path: 'edit-appointment', component: AppointmentFormComponent }
-    ]}
+    ]},
+    { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
