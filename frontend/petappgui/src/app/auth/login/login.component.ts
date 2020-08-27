@@ -3,10 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
-interface TokenObject {
-  token: string;
-}
+import { TokenObject } from '../../models/token-object';
 
 @Component({
   selector: 'app-login',

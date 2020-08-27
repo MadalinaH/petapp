@@ -14,8 +14,7 @@ export class NavbarComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onLogout(): void {
     this.cookieService.delete('petapp-token', '/');
