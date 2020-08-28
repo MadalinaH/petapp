@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../api.service';
+import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,16 +10,21 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  isLoggedIn$: Observable<boolean>;
+
   constructor(
-    private cookieService: CookieService,
-    private router: Router
+    private apiService: ApiService,
+    private cookieService: CookieService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.isLoggedIn$ = this.apiService.isLoggedIn;
+  }
 
   onLogout(): void {
+    // check again if we need to delete the cookie here and not in the service
     this.cookieService.delete('petapp-token', '/');
-    this.router.navigate(['/auth']);
+    this.apiService.logoutUser();
   }
 
 }

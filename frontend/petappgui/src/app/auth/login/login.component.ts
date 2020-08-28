@@ -36,13 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(): void {
-    this.apiSevice.loginUser(this.loginForm.value).subscribe(
-      (result: TokenObject) => {
-        this.router.navigate(['/main']);
-        this.cookieService.set('petapp-token', result.token, null, '/');
-      },
-      error => console.log(error)
-    )
+    this.apiSevice.loginUser(this.loginForm.value);
   }
 
 }
