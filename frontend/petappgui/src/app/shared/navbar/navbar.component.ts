@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../api.service';
-import { Observable } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class NavbarComponent implements OnInit {
 
+  // $ means property is an observable and we watch it for value changes
   isLoggedIn$: Observable<boolean>;
 
   constructor(

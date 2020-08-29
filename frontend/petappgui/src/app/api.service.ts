@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Appointment } from './models/appointment';
 import { Pet } from './models/pet';
 import { Vet } from './models/vet';
-import { BehaviorSubject } from 'rxjs';
-import { Router } from '@angular/router';
 import { TokenObject } from './models/token-object';
 
 @Injectable({
@@ -14,8 +14,11 @@ import { TokenObject } from './models/token-object';
 
 export class ApiService {
 
+  // the Behavior Subject class ensures all subscribers get the same value of the observable at any given time
+  // on login and logout, we change the value of this boolean variable
   private loggedIn = new BehaviorSubject<boolean>(false);
 
+  // returns value of loggedIn as an observable
   get isLoggedIn() {
      return this.loggedIn.asObservable();
   }

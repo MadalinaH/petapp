@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ApiService } from '../../api.service';
 import { Pet } from '../../models/pet';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-pet-info',
@@ -12,14 +12,14 @@ import { Location } from '@angular/common';
 export class PetInfoComponent implements OnInit {
 
   pet: Pet = {} as Pet;
-  
+
   selectedId: number;
 
   constructor(
-    private route: ActivatedRoute,
     private apiService: ApiService,
-    private location: Location
-  ) { }
+    private location: Location,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
     this.getSelectedId();

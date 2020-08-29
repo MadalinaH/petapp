@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ApiService } from '../../api.service';
 import { Appointment } from '../../models/appointment';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-appointment-info',

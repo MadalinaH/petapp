@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../api.service';
-import { Router } from '@angular/router';
 import { AbstractControl, FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-register',
@@ -37,14 +37,17 @@ export class RegisterComponent implements OnInit {
       ]),
       'confirm_password': new FormControl(null, Validators.required)
     },
+    // general validator for the entire form
     {validators: this.passwordMatch});
   }
 
+  // custom validator, takes as argument the form group because it is applied to the entire form, not just a single field
   passwordMatch(control: FormGroup): {passwordsDontMatch: boolean} {
     if(control.get('password').value !== control.get('confirm_password').value) {
       return {passwordsDontMatch: true};
     }
     else {
+      // if the values match, we return null to remove the error object if already set
       return null;
     }
   }

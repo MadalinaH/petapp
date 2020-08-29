@@ -1,8 +1,8 @@
-import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../api.service';
+import { CookieService } from 'ngx-cookie-service';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../../api.service';
 import { TokenObject } from '../../models/token-object';
 
 @Component({
@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) { }
 
+  // on init, check for token; if it exists, skip login and redirect to main
   ngOnInit(): void {
     const petappToken = this.cookieService.get('petapp-token');
     if(petappToken) {

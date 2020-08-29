@@ -11,7 +11,6 @@ import { AppointmentInfoComponent } from './main/appointment-info/appointment-in
 import { AppointmentFormComponent } from './main/appointment-form/appointment-form.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 
-// add 404 path
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'auth',
