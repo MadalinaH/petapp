@@ -94,4 +94,8 @@ export class ApiService {
     })
   }
 
+  getFacts() {
+    return this.httpClient.get('https://opentdb.com/api.php?amount=1&category=27&type=boolean&encode=base64');
+  }
+
 }
