@@ -14,9 +14,18 @@ import { TokenObject } from './models/token-object';
 
 export class ApiService {
 
+  authCookieExists() {
+    const petappToken = this.cookieService.get('petapp-token');
+    if(petappToken) {
+       return true;
+     }
+     return false;
+  }
+
+
   // the Behavior Subject class ensures all subscribers get the same value of the observable at any given time
   // on login and logout, we change the value of this boolean variable
-  private loggedIn = new BehaviorSubject<boolean>(false);
+  private loggedIn = new BehaviorSubject<boolean>(this.authCookieExists());
 
   // returns value of loggedIn as an observable
   get isLoggedIn() {

@@ -1,6 +1,10 @@
-<div *ngFor="let pet of pets">
-  <a routerLink="/main/pet-info"
-     [queryParams]="{selectedId: pet.id}">
-      <h3>{{pet.name}}</h3>
-  </a>
+<!-- style the cards and place them in grid format ( 3 x 3) -->
+<div class="row">
+  <div *ngFor="let pet of pets" class="col-md-4 card" style="width: 18rem;">
+    <img src="{{pet.pet_photo}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{pet.name}}</h5>
+      <a routerLink="/main/pet-info" [queryParams]="{selectedId: pet.id}" class="btn btn-info">Details</a>
+    </div>
+  </div>
 </div>

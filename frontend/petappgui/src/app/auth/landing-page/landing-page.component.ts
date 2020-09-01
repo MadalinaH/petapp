@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,23 +7,10 @@ import { ApiService } from '../../api.service';
 })
 export class LandingPageComponent implements OnInit {
 
-  animalTriviaQuestion: string;
-  animalTriviaAnswer: string;
-
-  constructor(private apiSevice: ApiService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.getAnotherTrivia();
-  }
 
-  getAnotherTrivia(): void {
-    this.apiSevice.getFacts().subscribe(
-      result => {
-        // atob converts base64 encoding to utf-8
-        this.animalTriviaQuestion = atob(result['results'][0]['question']);
-        this.animalTriviaAnswer = atob(result['results'][0]['correct_answer']);
-      }
-    )
   }
 
 }
