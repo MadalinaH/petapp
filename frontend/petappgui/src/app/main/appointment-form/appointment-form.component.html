@@ -2,19 +2,19 @@
   <h2>Add new appointment</h2>
   <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="vet">Vet office</label>
-      <select class="from-control" name="vet" id="vet" formControlName="vet">
-        <option>Select a vet office</option>
-        <option *ngFor="let vet of vets" value="vet.id">
+      <label for="vet_id">Vet office</label>
+      <select class="from-control" name="vet_id" id="vet_id" formControlName="vet_id">
+        <option [ngValue]=null>Select one</option>
+        <option *ngFor="let vet of vets" [ngValue]="vet.id">
           {{vet.name}}
         </option>
       </select>
     </div>
     <div class="form-group">
-      <label for="pet">Pet</label>
-      <select class="from-control" name="pet" id="pet" formControlName="pet">
-        <option>Select a pet</option>
-        <option *ngFor="let pet of pets" value="pet.id">
+      <label for="pet_id">Pet</label>
+      <select class="from-control" name="pet_id" id="pet_id" formControlName="pet_id">
+        <option [ngValue]=null>Select one</option>
+        <option *ngFor="let pet of pets" [ngValue]="pet.id">
           {{pet.name}}
         </option>
       </select>

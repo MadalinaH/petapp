@@ -112,6 +112,13 @@ export class ApiService {
     return this.httpClient.delete(currentUrl, {headers: this.getAuthHeaders()});
   }
 
+  addAppointment(appointmentData) {
+    const body = JSON.stringify(appointmentData);
+    const currentUrl = this.baseUrl + 'api/appointments/';
+    console.log('Saving appointment in service!');
+    return this.httpClient.post(currentUrl, body, {headers: this.getAuthHeaders()});
+
+  }
   deleteAppointment(id) {
     const currentUrl = this.baseUrl + 'api/appointments/' + id;
     return this.httpClient.delete(currentUrl, {headers: this.getAuthHeaders()});
