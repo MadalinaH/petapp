@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ApiService } from '../../api.service';
 import { Appointment } from '../../models/appointment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-appointment-info',
@@ -16,9 +17,10 @@ export class AppointmentInfoComponent implements OnInit {
   selectedId: number;
 
   constructor(
-    private route: ActivatedRoute,
     private apiService: ApiService,
-    private location: Location
+    private location: Location,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -41,6 +43,21 @@ export class AppointmentInfoComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  deleteAppointment(): void {
+    this.apiService.deleteAppointment(this.selectedId).subscribe(
+      result => {
+        this.router.navigate(['/main/appointments']);
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  editAppointment(): void {
+    console.log('');
   }
 
   goBack(): void {

@@ -1,7 +1,21 @@
 <h2>{{pet.name}}</h2>
-<h3>{{pet.sex}}, {{pet.breed}}</h3>
+<h3>{{pet.sex}}</h3>
+<h3>{{pet.type}}</h3>
+<h3>{{pet.breed}}</h3>
 <h3>{{pet.date_of_birth}}</h3>
-<img src="{{pet.pet_photo}}" width="200">
+<h3>{{pet.microchip_no}}</h3>
+<h3>{{pet.passport_no}}</h3>
+
+<!-- to display the appointments for this pet -->
+
 <div>
   <button class="btn btn-light" type="button" (click)="goBack()">Back</button>
+</div>
+
+<div>
+  <button class="btn btn-success" type="button" (click)="editPet()">Edit</button>
+</div>
+
+<div>
+  <button class="btn btn-danger" type="button" (click)="deletePet()">Delete</button>
 </div>

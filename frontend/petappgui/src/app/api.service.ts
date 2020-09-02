@@ -107,4 +107,14 @@ export class ApiService {
     return this.httpClient.get('https://opentdb.com/api.php?amount=1&category=27&type=boolean&encode=base64');
   }
 
+  deletePet(id) {
+    const currentUrl = this.baseUrl + 'api/pets/' + id;
+    return this.httpClient.delete(currentUrl, {headers: this.getAuthHeaders()});
+  }
+
+  deleteAppointment(id) {
+    const currentUrl = this.baseUrl + 'api/appointments/' + id;
+    return this.httpClient.delete(currentUrl, {headers: this.getAuthHeaders()});
+  }
+
 }

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ApiService } from '../../api.service';
 import { Pet } from '../../models/pet';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pet-info',
@@ -19,6 +20,7 @@ export class PetInfoComponent implements OnInit {
     private apiService: ApiService,
     private location: Location,
     private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +43,21 @@ export class PetInfoComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+
+  deletePet(): void {
+    this.apiService.deletePet(this.selectedId).subscribe(
+      result => {
+        this.router.navigate(['/main/pets']);
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  editPet(): void {
+    console.log('');
   }
 
   goBack(): void {
