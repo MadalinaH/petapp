@@ -10,6 +10,7 @@ import { PetInfoComponent } from './pet-info/pet-info.component';
 import { PetListComponent } from './pet-list/pet-list.component';
 import { ApiService } from '../api.service';
 import { SharedModule } from '../shared/shared.module';
+import { PetFormComponent } from './pet-form/pet-form.component';
 
 const routes: Routes = [];
 
@@ -20,7 +21,8 @@ const routes: Routes = [];
     AppointmentListComponent,
     HomeComponent,
     PetInfoComponent,
-    PetListComponent
+    PetListComponent,
+    PetFormComponent
   ],
   imports: [
     CommonModule,

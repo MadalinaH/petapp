@@ -2,20 +2,34 @@ from django.contrib.auth.models import User
 from django.db import models
 
 class Pet(models.Model):
-    # to provide more options for pet species (not just dog)
-    FEMALE = 'F'
-    MALE = 'M'
+
+    FEMALE = 'Female'
+    MALE = 'Male'
     PET_SEX_CHOICES = [
         (FEMALE, 'Female'),
         (MALE, 'Male'),
     ]
-    # investigate instance
+
+    DOG = 'Dog'
+    CAT = 'Cat'
+    BIRD = 'Bird'
+    RODENT = 'Rodent'
+    OTHER = 'Other'
+    PET_CHOICES = [
+        (DOG, 'Dog'),
+        (CAT, 'Cat'),
+        (BIRD, 'Bird'),
+        (RODENT, 'Rodent'),
+        (OTHER, 'Other'),
+    ]
+    # research more on instance for user id
     def get_upload_path(instance, filename):
         return 'pets/%s/%s' % (instance.user_id, filename)
 
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50, null=False)
-    sex = models.CharField(max_length=1, null=False, choices=PET_SEX_CHOICES, default='Female')
+    sex = models.CharField(max_length=10, null=False, choices=PET_SEX_CHOICES, default='Female')
+    type = models.CharField(max_length=10, null=False, choices=PET_CHOICES, default='Dog')
     breed = models.CharField(max_length=100, null=False)
     date_of_birth = models.DateField(null=False) # TODO add constraint date cannot be in the future
     microchip_no = models.CharField(max_length=50, null=False)

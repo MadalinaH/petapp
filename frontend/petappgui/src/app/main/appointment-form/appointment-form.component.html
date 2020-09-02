@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>New appointment</h2>
+  <h2>Add new appointment</h2>
   <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="vet">Vet office</label>
@@ -31,6 +31,6 @@
       <label for="notes">Appointment notes</label>
       <textarea class="form-control" id="notes" formControlName="notes"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Save</button>
   </form>
 </div>

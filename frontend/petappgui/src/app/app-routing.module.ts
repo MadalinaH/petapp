@@ -6,6 +6,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HomeComponent } from './main/home/home.component';
 import { PetListComponent } from './main/pet-list/pet-list.component';
 import { PetInfoComponent } from './main/pet-info/pet-info.component';
+import { PetFormComponent } from './main/pet-form/pet-form.component';
 import { AppointmentListComponent } from './main/appointment-list/appointment-list.component';
 import { AppointmentInfoComponent } from './main/appointment-info/appointment-info.component';
 import { AppointmentFormComponent } from './main/appointment-form/appointment-form.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'pets', component: PetListComponent },
       { path: 'pet-info', component: PetInfoComponent },
+      { path: 'add-pet', component: PetFormComponent },
       { path: 'appointments', component: AppointmentListComponent },
       { path: 'appointment-info', component: AppointmentInfoComponent },
       { path: 'add-appointment', component: AppointmentFormComponent },

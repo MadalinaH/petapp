@@ -19,11 +19,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '#wk8k+#bd#t!kp6@(nah-f)+8w$0m9l!zrg7x1n0q6rlitvq2i'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
 
 ALLOWED_HOSTS = []
 
@@ -42,6 +45,7 @@ INSTALLED_APPS = [
     'api',
 ]
 
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,7 +57,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'petappapi.urls'
+
 
 TEMPLATES = [
     {
@@ -71,6 +77,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'petappapi.wsgi.application'
 
 
@@ -83,6 +90,7 @@ DATABASES = {
     }
 }
 
+
 # REST_FRAMEWORK = {
 #    'DEFAULT_PERMISSION_CLASSES': {
 #       'rest_framework.permissions.IsAuthenticated',
@@ -92,6 +100,7 @@ DATABASES = {
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:4200"
 ]
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

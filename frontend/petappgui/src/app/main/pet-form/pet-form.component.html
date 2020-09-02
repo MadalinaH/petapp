@@ -1,0 +1,45 @@
+<div class="container">
+  <h2>Add new pet</h2>
+  <form [formGroup]="petForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="petName">Pet name</label>
+        <input type="text" class="form-control" id="petName" formControlName="petName">
+    </div>
+    <div class="form-group">
+      <label for="petType">Choose one</label>
+      <select class="from-control" name="petType" id="petType" formControlName="petType">
+        <option value=null>Select one</option>
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+        <option value="Bird">Bird</option>
+        <option value="Rodent">Rodent</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="petSex">Girl or boy</label>
+      <select class="from-control" name="petSex" id="petSex" formControlName="petSex">
+        <option value=null>Select one</option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="birthDate">Birthday</label>
+      <input type="date" class="form-control" id="birthDate" formControlName="birthDate">
+    </div>
+    <div class="form-group">
+      <label for="petBreed">Breed</label>
+        <input type="text" class="form-control" id="petBreed" formControlName="petBreed">
+    </div>
+    <div class="form-group">
+      <label for="microchipNo">Microchip number</label>
+        <input type="text" class="form-control" id="microchipNo" formControlName="microchipNo">
+    </div>
+    <div class="form-group">
+      <label for="passportNo">Passport number</label>
+        <input type="text" class="form-control" id="passportNo" formControlName="passportNo">
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+</div>

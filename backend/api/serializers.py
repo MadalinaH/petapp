@@ -17,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
 class PetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pet
-        fields = ('id', 'user_id', 'name', 'sex','breed', 'date_of_birth', 'microchip_no', 'passport_no', 'pet_photo')
+        fields = ('id', 'user_id', 'name', 'sex', 'type', 'breed', 'date_of_birth', 'microchip_no', 'passport_no', 'pet_photo')
 
 class VetOfficeSerializer(serializers.ModelSerializer):
     class Meta:
