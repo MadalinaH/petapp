@@ -1,6 +1,7 @@
-<!-- to display pet name and vet office name (gets nested data from the backend) -->
-<h3>{{appointment.date}}, {{appointment.time}}</h3>
-<h3>Notes: {{appointment.notes}}</h3>
+<p>{{appointment.pet_name}}</p>
+<p>{{appointment.vet_name}}</p>
+<p>{{appointment.date}}, {{appointment.time}}</p>
+<p>Notes: {{appointment.notes}}</p>
 
 <div>
   <button class="btn btn-light" type="button" (click)="goBack()">Back</button>

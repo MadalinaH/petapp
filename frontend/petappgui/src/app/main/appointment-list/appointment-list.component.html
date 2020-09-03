@@ -4,10 +4,11 @@
         routerLink="/main/appointment-info"
         [queryParams]="{selectedId: appointment.id}">
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{appointment.date}} </h5>
+        <h5>{{appointment.date}} </h5>
         <small>{{appointment.time}}</small>
       </div>
-      <p class="mb-1">{{appointment.pet_id}}</p>
+      <p>{{appointment.pet_name}}</p>
+      <p>{{appointment.vet_name}}</p>
     </a>
   </div>
   <button class="btn btn-light" type="button" routerLink="/main/add-appointment">Add appointment</button>

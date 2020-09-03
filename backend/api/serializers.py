@@ -3,6 +3,7 @@ from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 from .models import Pet, VetOffice, Appointment, Reminder
 
+
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -14,20 +15,33 @@ class UserSerializer(serializers.ModelSerializer):
         Token.objects.create(user=user)
         return user
 
+
 class PetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pet
         fields = ('id', 'user_id', 'name', 'sex', 'type', 'breed', 'date_of_birth', 'microchip_no', 'passport_no', 'pet_photo')
+
 
 class VetOfficeSerializer(serializers.ModelSerializer):
     class Meta:
         model = VetOffice
         fields = ('id', 'name', 'address', 'email','phone')
 
+
 class AppointmentSerializer(serializers.ModelSerializer):
+    # We set the value of these fields to send them to the frontend; fields do not actually exist in database
+    pet_name = serializers.SerializerMethodField('get_pet_name')
+    def get_pet_name(self, obj):
+        return obj.pet_id.name
+
+    vet_name = serializers.SerializerMethodField('get_vet_name')
+    def get_vet_name(self, obj):
+        return obj.vet_id.name
+
     class Meta:
         model = Appointment
-        fields = ('id', 'pet_id', 'vet_id', 'date','time', 'notes')
+        fields = ('id', 'pet_id', 'pet_name', 'vet_id', 'vet_name', 'date','time', 'notes')
+
 
 class ReminderSerializer(serializers.ModelSerializer):
     class Meta:
