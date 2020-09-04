@@ -56,10 +56,6 @@ export class AppointmentInfoComponent implements OnInit {
     )
   }
 
-  editAppointment(): void {
-    console.log('');
-  }
-
   goBack(): void {
     this.location.back();
   }

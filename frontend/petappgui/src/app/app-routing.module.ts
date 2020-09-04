@@ -25,10 +25,9 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'pets', component: PetListComponent },
       { path: 'pet-info', component: PetInfoComponent },
-      { path: 'add-pet', component: PetFormComponent },
+      { path: 'edit-pet', component: PetFormComponent },
       { path: 'appointments', component: AppointmentListComponent },
       { path: 'appointment-info', component: AppointmentInfoComponent },
-      { path: 'add-appointment', component: AppointmentFormComponent },
       { path: 'edit-appointment', component: AppointmentFormComponent }
     ]},
     { path: '**', component: NotFoundComponent }

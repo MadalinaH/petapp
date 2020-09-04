@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -14,11 +15,14 @@ export class AppointmentFormComponent implements OnInit {
 
   appointmentForm: FormGroup;
 
+  selectedId: number;
+
   pets: Pet[];
 
   vets: Vet[];
 
   constructor(
+    private route: ActivatedRoute,
     private apiService: ApiService,
     private router:Router
   ) {}
@@ -52,25 +56,58 @@ export class AppointmentFormComponent implements OnInit {
   }
 
   initForm(): void {
-    this.appointmentForm = new FormGroup({
-      'pet_id': new FormControl(null, Validators.required),
-      'vet_id': new FormControl(null, Validators.required),
-      'date': new FormControl(null, Validators.required),
-      'time': new FormControl(null, Validators.required),
-      'notes': new FormControl(null),
-    })
+    this.route.queryParams.subscribe(params => {
+      this.selectedId = params['selectedId'];
+    });
+
+    if(this.selectedId === 0) {
+      this.appointmentForm = new FormGroup({
+        'pet_id': new FormControl(null, Validators.required),
+        'vet_id': new FormControl(null, Validators.required),
+        'date': new FormControl(null, Validators.required),
+        'time': new FormControl(null, Validators.required),
+        'notes': new FormControl(null),
+      });
+    }
+    else {
+      this.apiService.getAppointment(this.selectedId).subscribe(
+        appointment =>  {
+          this.appointmentForm = new FormGroup({
+            'pet_id': new FormControl(appointment.pet_id, Validators.required),
+            'vet_id': new FormControl(appointment.vet_id, Validators.required),
+            'date': new FormControl(appointment.date, Validators.required),
+            'time': new FormControl(appointment.time, Validators.required),
+            'notes': new FormControl(appointment.notes),
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      )
+    }
   }
 
   onSubmit(): void {
-    console.log('Saving appointment!')
-    this.apiService.addAppointment(this.appointmentForm.value).subscribe(
-      result => {
-        this.router.navigate(['/main/appointments']);
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    if(this.selectedId === 0) {
+      this.apiService.addAppointment(this.appointmentForm.value).subscribe(
+        result => {
+          this.router.navigate(['/main/appointments']);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
+    else {
+      this.apiService.editAppointment(this.selectedId, this.appointmentForm.value).subscribe(
+        result => {
+          this.router.navigate(['/main/appointment-info/'], { queryParams: { selectedId: this.selectedId }});
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
   }
 
 }

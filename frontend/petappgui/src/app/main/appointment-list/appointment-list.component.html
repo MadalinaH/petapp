@@ -11,5 +11,8 @@
       <p>{{appointment.vet_name}}</p>
     </a>
   </div>
-  <button class="btn btn-light" type="button" routerLink="/main/add-appointment">Add appointment</button>
+  <button class="btn btn-light"
+          type="button"
+          routerLink="/main/edit-appointment"
+          [queryParams]="{selectedId: 0}">Add appointment</button>
 </div>
