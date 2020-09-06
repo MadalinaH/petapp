@@ -60,13 +60,13 @@ export class AppointmentFormComponent implements OnInit {
       this.selectedId = params['selectedId'];
     });
 
-    if(this.selectedId === 0) {
+    if(this.selectedId == 0) {
       this.appointmentForm = new FormGroup({
         'pet_id': new FormControl(null, Validators.required),
         'vet_id': new FormControl(null, Validators.required),
         'date': new FormControl(null, Validators.required),
         'time': new FormControl(null, Validators.required),
-        'notes': new FormControl(null),
+        'notes': new FormControl(null)
       });
     }
     else {
@@ -77,7 +77,7 @@ export class AppointmentFormComponent implements OnInit {
             'vet_id': new FormControl(appointment.vet_id, Validators.required),
             'date': new FormControl(appointment.date, Validators.required),
             'time': new FormControl(appointment.time, Validators.required),
-            'notes': new FormControl(appointment.notes),
+            'notes': new FormControl(appointment.notes)
           });
         },
         error => {
@@ -88,7 +88,7 @@ export class AppointmentFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if(this.selectedId === 0) {
+    if(this.selectedId == 0) {
       this.apiService.addAppointment(this.appointmentForm.value).subscribe(
         result => {
           this.router.navigate(['/main/appointments']);
