@@ -1,5 +1,8 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-pet-form',
@@ -10,26 +13,73 @@ export class PetFormComponent implements OnInit {
 
   petForm: FormGroup;
 
-  constructor() { }
+  selectedId: number;
+
+  constructor(
+    private route: ActivatedRoute,
+    private apiService: ApiService,
+    private router:Router
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
   }
 
   initForm(): void {
-    this.petForm = new FormGroup({
-      'petName': new FormControl(null, Validators.required),
-      'petType': new FormControl(null, Validators.required),
-      'petSex': new FormControl(null, Validators.required),
-      'birthDate': new FormControl(null, Validators.required),
-      'petBreed': new FormControl(null, Validators.required),
-      'microchipNo': new FormControl(null, Validators.required),
-      'passportNo': new FormControl(null, Validators.required)
-    })
+    this.route.queryParams.subscribe(params => {
+      this.selectedId = params['selectedId'];
+      if(this.selectedId == 0) {
+        this.petForm = new FormGroup({
+          'name': new FormControl(null, Validators.required),
+          'type': new FormControl(null, Validators.required),
+          'sex': new FormControl(null, Validators.required),
+          'date_of_birth': new FormControl(null, Validators.required),
+          'breed': new FormControl(null, Validators.required),
+          'microchip_no': new FormControl(null, Validators.required),
+          'passport_no': new FormControl(null, Validators.required)
+        })
+      }
+      else {
+        this.apiService.getPet(this.selectedId).subscribe(
+          pet =>  {
+            this.petForm = new FormGroup({
+              'name': new FormControl(pet.name, Validators.required),
+              'type': new FormControl(pet.type, Validators.required),
+              'sex': new FormControl(pet.sex, Validators.required),
+              'date_of_birth': new FormControl(pet.date_of_birth, Validators.required),
+              'breed': new FormControl(pet.breed, Validators.required),
+              'microchip_no': new FormControl(pet.microchip_no, Validators.required),
+              'passport_no': new FormControl(pet.passport_no, Validators.required)
+          });
+        },
+        error => {
+          console.log(error);
+        });
+      }
+    });
   }
 
   onSubmit(): void {
-    console.log('');
+    if(this.selectedId == 0) {
+      this.apiService.addPet(this.petForm.value).subscribe(
+        result => {
+          this.router.navigate(['/main/pets']);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
+    else {
+      this.apiService.editPet(this.selectedId, this.petForm.value).subscribe(
+        result => {
+          this.router.navigate(['/main/pet-info/'], { queryParams: { selectedId: this.selectedId }});
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
   }
 
 }

@@ -58,33 +58,31 @@ export class AppointmentFormComponent implements OnInit {
   initForm(): void {
     this.route.queryParams.subscribe(params => {
       this.selectedId = params['selectedId'];
-    });
-
-    if(this.selectedId == 0) {
-      this.appointmentForm = new FormGroup({
-        'pet_id': new FormControl(null, Validators.required),
-        'vet_id': new FormControl(null, Validators.required),
-        'date': new FormControl(null, Validators.required),
-        'time': new FormControl(null, Validators.required),
-        'notes': new FormControl(null)
-      });
-    }
-    else {
-      this.apiService.getAppointment(this.selectedId).subscribe(
-        appointment =>  {
-          this.appointmentForm = new FormGroup({
-            'pet_id': new FormControl(appointment.pet_id, Validators.required),
-            'vet_id': new FormControl(appointment.vet_id, Validators.required),
-            'date': new FormControl(appointment.date, Validators.required),
-            'time': new FormControl(appointment.time, Validators.required),
-            'notes': new FormControl(appointment.notes)
+      if(this.selectedId == 0) {
+        this.appointmentForm = new FormGroup({
+          'pet_id': new FormControl(null, Validators.required),
+          'vet_id': new FormControl(null, Validators.required),
+          'date': new FormControl(null, Validators.required),
+          'time': new FormControl(null, Validators.required),
+          'notes': new FormControl(null)
+        });
+      }
+      else {
+        this.apiService.getAppointment(this.selectedId).subscribe(
+          appointment =>  {
+            this.appointmentForm = new FormGroup({
+              'pet_id': new FormControl(appointment.pet_id, Validators.required),
+              'vet_id': new FormControl(appointment.vet_id, Validators.required),
+              'date': new FormControl(appointment.date, Validators.required),
+              'time': new FormControl(appointment.time, Validators.required),
+              'notes': new FormControl(appointment.notes)
+            });
+          },
+          error => {
+            console.log(error);
           });
-        },
-        error => {
-          console.log(error);
-        }
-      )
-    }
+      }
+    });
   }
 
   onSubmit(): void {

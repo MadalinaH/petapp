@@ -2,14 +2,14 @@
 
 <div class="container">
   <h2>Add new pet</h2>
-  <form [formGroup]="petForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="petForm" *ngIf="this.petForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="petName">Pet name</label>
-        <input type="text" class="form-control" id="petName" formControlName="petName">
+      <label for="name">Pet name</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
     </div>
     <div class="form-group">
-      <label for="petType">Choose one</label>
-      <select class="from-control" name="petType" id="petType" formControlName="petType">
+      <label for="type">Choose one</label>
+      <select class="from-control" name="type" id="type" formControlName="type">
         <option value=null>Select one</option>
         <option value="Dog">Dog</option>
         <option value="Cat">Cat</option>
@@ -19,28 +19,28 @@
       </select>
     </div>
     <div class="form-group">
-      <label for="petSex">Girl or boy</label>
-      <select class="from-control" name="petSex" id="petSex" formControlName="petSex">
+      <label for="sex">Girl or boy</label>
+      <select class="from-control" name="sex" id="sex" formControlName="sex">
         <option value=null>Select one</option>
         <option value="Female">Female</option>
         <option value="Male">Male</option>
       </select>
     </div>
     <div class="form-group">
-      <label for="birthDate">Birthday</label>
-      <input type="date" class="form-control" id="birthDate" formControlName="birthDate">
+      <label for="date_of_birth">Birthday</label>
+      <input type="date" class="form-control" id="date_of_birth" formControlName="date_of_birth">
     </div>
     <div class="form-group">
-      <label for="petBreed">Breed</label>
-        <input type="text" class="form-control" id="petBreed" formControlName="petBreed">
+      <label for="breed">Breed</label>
+        <input type="text" class="form-control" id="breed" formControlName="breed">
     </div>
     <div class="form-group">
-      <label for="microchipNo">Microchip number</label>
-        <input type="text" class="form-control" id="microchipNo" formControlName="microchipNo">
+      <label for="microchip_no">Microchip number</label>
+        <input type="text" class="form-control" id="microchip_no" formControlName="microchip_no">
     </div>
     <div class="form-group">
-      <label for="passportNo">Passport number</label>
-        <input type="text" class="form-control" id="passportNo" formControlName="passportNo">
+      <label for="passport_no">Passport number</label>
+        <input type="text" class="form-control" id="passport_no" formControlName="passport_no">
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
   </form>

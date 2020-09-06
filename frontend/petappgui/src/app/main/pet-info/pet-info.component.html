@@ -15,7 +15,10 @@
 </div>
 
 <div>
-  <button class="btn btn-success" type="button" (click)="editPet()">Edit</button>
+  <button class="btn btn-success"
+          type="button"
+          routerLink="/main/edit-pet"
+          [queryParams]="{selectedId: pet.id}">Edit</button>
 </div>
 
 <div>
