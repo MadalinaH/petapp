@@ -20,6 +20,7 @@ class PetSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pet
         fields = ('id', 'user_id', 'name', 'sex', 'type', 'breed', 'date_of_birth', 'microchip_no', 'passport_no', 'pet_photo')
+        extra_kwargs = {'user_id': {'read_only': True}}
 
 
 class VetOfficeSerializer(serializers.ModelSerializer):

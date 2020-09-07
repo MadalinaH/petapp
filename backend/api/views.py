@@ -16,6 +16,13 @@ class PetViewSet(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication, )
     # permission_classes = (IsAuthenticated, )
 
+    def perform_create(self, serializer):
+        serializer.save(user_id=self.request.user)
+
+    def perform_update(self, serializer):
+        serializer.save(user_id=self.request.user)
+
+
 class VetOfficeViewSet(viewsets.ModelViewSet):
     queryset = VetOffice.objects.all()
     serializer_class = VetOfficeSerializer
