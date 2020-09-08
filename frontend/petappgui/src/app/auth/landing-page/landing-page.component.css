@@ -1,1 +1,48 @@
+#landing_page_main_container {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  /* remove scroll from page */
+}
 
+.card {
+  padding: 50px;
+  /* color: #fff */
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: 0 25px;
+}
+
+#register_card {
+  background: rgb(252, 108, 108);
+}
+
+#login_card {
+  background: rgb(255, 172, 81);
+}
+
+.button {
+  width: 150px;
+  height: 50px;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  line-height: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  align-self: center;
+  margin-top: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.button:hover {
+  background: #ffffff;
+  color: #000;
+}
+
+.card p {
+  color: #fff;
+  font-size: 1.5rem;
+}

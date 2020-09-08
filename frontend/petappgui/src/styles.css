@@ -1,24 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-
-body, html {
+html, body {
   height: 100%;
-  margin:0;
-  padding:0;
 }
 
 body {
-  background: #3cb8a2;
-  background-image: linear-gradient(
-      115deg,
-      rgba(117, 156, 172, 0.5),
-      rgba(92, 139, 148, 0.4)
-    ),
-    url("assets/images/bg_image.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
