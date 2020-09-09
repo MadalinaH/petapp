@@ -1,36 +1,48 @@
-<div class="container">
-  <h2>Add new appointment</h2>
-  <form [formGroup]="appointmentForm" *ngIf="this.appointmentForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="vet_id">Vet office</label>
-      <select class="from-control" name="vet_id" id="vet_id" formControlName="vet_id">
-        <option [ngValue]=null>Select one</option>
-        <option *ngFor="let vet of vets" [ngValue]="vet.id">
-          {{vet.name}}
-        </option>
-      </select>
+<div class="container-fluid px-0" id="appointment_page_main_container">
+
+  <div class="row align-items-center">
+
+    <div class="col text-center">
+      <h2>Add new appointment</h2>
+      <form [formGroup]="appointmentForm" *ngIf="this.appointmentForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="vet_id">Vet office</label>
+          <select class="from-control" name="vet_id" id="vet_id" formControlName="vet_id">
+            <option [ngValue]=null>Select one</option>
+            <option *ngFor="let vet of vets" [ngValue]="vet.id">
+              {{vet.name}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="pet_id">Pet</label>
+          <select class="from-control" name="pet_id" id="pet_id" formControlName="pet_id">
+            <option [ngValue]=null>Select one</option>
+            <option *ngFor="let pet of pets" [ngValue]="pet.id">
+              {{pet.name}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date">Appointment date</label>
+          <input type="date" class="form-control" id="date" formControlName="date">
+        </div>
+        <div class="form-group">
+          <label for="time">Appointment time</label>
+          <input type="time" class="form-control" id="time" formControlName="time">
+        </div>
+        <div class="form-group">
+          <label for="notes">Appointment notes</label>
+          <textarea class="form-control" id="notes" formControlName="notes"></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary">Save</button>
+      </form>
     </div>
-    <div class="form-group">
-      <label for="pet_id">Pet</label>
-      <select class="from-control" name="pet_id" id="pet_id" formControlName="pet_id">
-        <option [ngValue]=null>Select one</option>
-        <option *ngFor="let pet of pets" [ngValue]="pet.id">
-          {{pet.name}}
-        </option>
-      </select>
+
+    <div class="col text-center">
+      <img class="img-fluid" src="assets/images/appointment_page.jpg">
     </div>
-    <div class="form-group">
-      <label for="date">Appointment date</label>
-      <input type="date" class="form-control" id="date" formControlName="date">
-    </div>
-    <div class="form-group">
-      <label for="time">Appointment time</label>
-      <input type="time" class="form-control" id="time" formControlName="time">
-    </div>
-    <div class="form-group">
-      <label for="notes">Appointment notes</label>
-      <textarea class="form-control" id="notes" formControlName="notes"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Save</button>
-  </form>
+
+  </div>
+
 </div>
