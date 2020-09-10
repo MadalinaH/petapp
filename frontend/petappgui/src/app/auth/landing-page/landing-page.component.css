@@ -22,6 +22,7 @@ h1 {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: rgb(248, 240, 241);
   /* remove scroll from page */
 }
 #register {
@@ -30,7 +31,7 @@ h1 {
 #login {
   background-color: rgb(255, 172, 81);
 }
-#lp_image {
+#lpImage {
   font-size: 0.75rem;
   font-weight: 100;
   color: rgb(51, 66, 74);

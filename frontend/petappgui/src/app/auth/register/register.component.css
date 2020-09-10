@@ -1,6 +1,8 @@
+h2 {
+  color: rgb(42, 65, 71);
+}
 form {
   margin: auto;
-  padding: 1rem;
   width: 600px;
   height: auto;
   border-style: none;
@@ -49,7 +51,7 @@ input {
 .loginLinks:hover {
   text-decoration: underline;
 }
-#register_page {
+#registerPage {
   margin: 0;
   padding-top: 10px;
   overflow-x: hidden;
