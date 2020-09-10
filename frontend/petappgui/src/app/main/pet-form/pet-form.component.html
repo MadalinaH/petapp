@@ -1,19 +1,26 @@
-<!-- to add button to upload pet photo -->
-<div class="container-fluid px-0" id="pet_page_main_container">
-
- <div class="row align-items-center">
-
+<div id="petPage" class="container-fluid">
+ <div class="row no-gutters align-items-center">
    <div class="col text-center">
-      <h2>Add new pet</h2>
-      <form [formGroup]="petForm" *ngIf="this.petForm" (ngSubmit)="onSubmit()">
+      <h2><i class="fa fa-paw"></i> Add another one!</h2>
+      <form id="petForm"
+            class="text-left mt-3"
+            *ngIf="this.petForm"
+            [formGroup]="petForm"
+            (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="name">Pet name</label>
-            <input type="text" class="form-control" id="name" formControlName="name">
+          <label for="name">What's their name?</label>
+            <input id="name"
+                   class="form-control"
+                   type="text"
+                   formControlName="name">
         </div>
         <div class="form-group">
-          <label for="type">Choose one</label>
-          <select class="from-control" name="type" id="type" formControlName="type">
-            <option value=null>Select one</option>
+          <label for="type">Dog, cat ... dragon?</label>
+          <select id="type"
+                  class="from-control"
+                  name="type"
+                  formControlName="type">
+            <option value=null>Pick one</option>
             <option value="Dog">Dog</option>
             <option value="Cat">Cat</option>
             <option value="Bird">Bird</option>
@@ -22,41 +29,62 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="sex">Girl or boy</label>
-          <select class="from-control" name="sex" id="sex" formControlName="sex">
-            <option value=null>Select one</option>
+          <label for="sex">Girl or boy?</label>
+          <select id="sex"
+                  class="from-control"
+                  name="sex" id="sex"
+                  formControlName="sex">
+            <option value=null>Pick one</option>
             <option value="Female">Female</option>
             <option value="Male">Male</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="date_of_birth">Birthday</label>
-          <input type="date" class="form-control" id="date_of_birth" formControlName="date_of_birth">
+          <label for="date_of_birth">When is their birthday?</label>
+          <input id="date_of_birth"
+                 class="form-control"
+                 type="date"
+                 formControlName="date_of_birth">
         </div>
         <div class="form-group">
           <label for="breed">Breed</label>
-            <input type="text" class="form-control" id="breed" formControlName="breed">
+            <input id="breed"
+                   class="form-control"
+                   type="text"
+                   formControlName="breed">
         </div>
         <div class="form-group">
-          <label for="microchip_no">Microchip number</label>
-            <input type="text" class="form-control" id="microchip_no" formControlName="microchip_no">
+          <label for="microchip_no">Microchip</label>
+            <input id="microchip_no"
+                   class="form-control"
+                   type="text"
+                   formControlName="microchip_no">
         </div>
         <div class="form-group">
-          <label for="passport_no">Passport number</label>
-            <input type="text" class="form-control" id="passport_no" formControlName="passport_no">
+          <label for="passport_no">Passport</label>
+            <input id="passport_no"
+                   class="form-control"
+                   type="text"
+                   formControlName="passport_no">
         </div>
-        <button type="submit" class="btn btn-warning">Save</button>
-
-        <!-- add a cancel button -->
-
+        <div class="row no-gutters">
+          <div class="col">
+            <button type="submit" class="btn btn-danger mr-2">Cancel</button>
+          </div>
+          <div class="col">
+            <button type="submit" class="btn btn-custom ml-2">Save</button>
+          </div>
+        </div>
+        <div class="col text-center mt-3">
+          <!-- implement functionality -->
+          <a class="petLinks" href="#">Go back</a>
+        </div>
       </form>
     </div>
-
     <div class="col text-center">
       <img class="img-fluid" src="assets/images/pet_page.jpg">
-      <a href='https://www.freepik.com/vectors/logo'>Logo vector created by rawpixel.com - www.freepik.com</a>
+      <a id="petImage"
+         href="https://www.freepik.com/vectors/logo">Logo vector created by rawpixel.com - www.freepik.com</a>
     </div>
-
  </div>
-
 </div>

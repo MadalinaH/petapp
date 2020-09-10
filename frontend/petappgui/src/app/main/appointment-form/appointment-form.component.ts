@@ -11,28 +11,22 @@ import { Vet } from '../../models/vet';
   templateUrl: './appointment-form.component.html',
   styleUrls: ['./appointment-form.component.css']
 })
+
 export class AppointmentFormComponent implements OnInit {
-
   appointmentForm: FormGroup;
-
   selectedId: number;
-
   pets: Pet[];
-
   vets: Vet[];
-
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
     private router:Router
   ) {}
-
   ngOnInit(): void {
     this.getPets();
     this.getVets();
     this.initForm();
   }
-
   getVets(): void {
     this.apiService.getVets().subscribe(
       vets =>  {
@@ -43,7 +37,6 @@ export class AppointmentFormComponent implements OnInit {
       }
     )
   }
-
   getPets(): void {
     this.apiService.getPets().subscribe(
       pets =>  {
@@ -54,7 +47,6 @@ export class AppointmentFormComponent implements OnInit {
       }
     )
   }
-
   initForm(): void {
     this.route.queryParams.subscribe(params => {
       this.selectedId = params['selectedId'];
@@ -84,7 +76,6 @@ export class AppointmentFormComponent implements OnInit {
       }
     });
   }
-
   onSubmit(): void {
     if(this.selectedId == 0) {
       this.apiService.addAppointment(this.appointmentForm.value).subscribe(
@@ -107,5 +98,4 @@ export class AppointmentFormComponent implements OnInit {
       );
     }
   }
-
 }

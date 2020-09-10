@@ -9,22 +9,18 @@ import { ApiService } from '../../api.service';
   templateUrl: './pet-form.component.html',
   styleUrls: ['./pet-form.component.css']
 })
+
 export class PetFormComponent implements OnInit {
-
   petForm: FormGroup;
-
   selectedId: number;
-
   constructor(
     private route: ActivatedRoute,
     private apiService: ApiService,
     private router:Router
   ) {}
-
   ngOnInit(): void {
     this.initForm();
   }
-
   initForm(): void {
     this.route.queryParams.subscribe(params => {
       this.selectedId = params['selectedId'];
@@ -58,7 +54,6 @@ export class PetFormComponent implements OnInit {
       }
     });
   }
-
   onSubmit(): void {
     if(this.selectedId == 0) {
       this.apiService.addPet(this.petForm.value).subscribe(
@@ -81,5 +76,4 @@ export class PetFormComponent implements OnInit {
       );
     }
   }
-
 }
