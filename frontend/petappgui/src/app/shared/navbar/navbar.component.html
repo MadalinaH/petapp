@@ -1,25 +1,21 @@
-<nav id="mainNavbar" class="navbar navbar-custom navbar-expand-md py-2 fixed-top">
-
+<nav id="mainNavbar" class="navbar navbar-custom navbar-expand-md py-1 fixed-top">
   <a class="navbar-brand"><i class="fa fa-paw"></i> PetBook</a>
   <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navLinks">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a *ngIf="isLoggedIn$ | async" class="nav-link" [routerLink]="'/main/pets'">My pets</a>
+        <a *ngIf="isLoggedIn$ | async" class="nav-link" [routerLink]="'/main/pets'">Pets</a>
       </li>
       <li class="nav-item">
-        <a *ngIf="isLoggedIn$ | async" class="nav-link" [routerLink]="'/main/appointments'">My appointments</a>
+        <a *ngIf="isLoggedIn$ | async" class="nav-link" [routerLink]="'/main/appointments'">Appointments</a>
       </li>
     </ul>
-
     <ul class="navbar-nav ml-auto">
       <li class="nav-item mr-auto">
         <button *ngIf="isLoggedIn$ | async" class="btn btn-danger" type="button" (click)="onLogout()">Log out</button>
       </li>
     </ul>
   </div>
-
 </nav>

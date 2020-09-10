@@ -1,48 +1,38 @@
-#landing_page_main_container {
+h1 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: rgb(51, 66, 74);
+}
+.buttons {
+  width: 250px;
+  height: 90px;
+  padding: 25px;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.button {
+  color: #fff;
+}
+.button:hover {
+  color: rgb(51, 66, 74);
+  text-decoration: none;
+}
+#lp {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   /* remove scroll from page */
 }
-
-.card {
-  padding: 50px;
-  /* color: #fff */
-  border-radius: 20px;
-  box-sizing: border-box;
-  margin: 0 25px;
+#register {
+  background-color: rgb(252, 108, 108);
 }
-
-#register_card {
-  background: rgb(252, 108, 108);
+#login {
+  background-color: rgb(255, 172, 81);
 }
-
-#login_card {
-  background: rgb(255, 172, 81);
-}
-
-.button {
-  width: 150px;
-  height: 50px;
-  border-radius: 25px;
-  border: 2px solid #fff;
-  line-height: 50px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: #fff;
+#lp_image {
+  font-size: 0.75rem;
+  font-weight: 100;
+  color: rgb(51, 66, 74);
   text-decoration: none;
-  align-self: center;
-  margin-top: 10px;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.button:hover {
-  background: #ffffff;
-  color: #000;
-}
-
-.card p {
-  color: #fff;
-  font-size: 1.5rem;
 }

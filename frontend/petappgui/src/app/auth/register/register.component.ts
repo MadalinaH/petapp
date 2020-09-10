@@ -8,19 +8,16 @@ import { ApiService } from '../../api.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
 export class RegisterComponent implements OnInit {
-
   registerForm: FormGroup;
-
   constructor(
     private apiSevice: ApiService,
     private router: Router
-  ) { }
-
+  ) {}
   ngOnInit(): void {
     this.initForm();
   }
-
   initForm(): void {
     this.registerForm = new FormGroup({
       'first_name': new FormControl(null, Validators.required),
@@ -30,7 +27,6 @@ export class RegisterComponent implements OnInit {
         Validators.required,
         Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
       ]),
-
       'password': new FormControl(null, [
         Validators.required,
         Validators.minLength(6)
@@ -40,7 +36,6 @@ export class RegisterComponent implements OnInit {
     // general validator for the entire form
     {validators: this.passwordMatch});
   }
-
   // custom validator, takes as argument the form group because it is applied to the entire form, not just a single field
   passwordMatch(control: FormGroup): {passwordsDontMatch: boolean} {
     if(control.get('password').value !== control.get('confirm_password').value) {
@@ -51,7 +46,6 @@ export class RegisterComponent implements OnInit {
       return null;
     }
   }
-
   onRegister(): void {
     const registerData = {};
     registerData['first_name'] = this.registerForm.value['first_name'];
@@ -64,5 +58,4 @@ export class RegisterComponent implements OnInit {
       error => console.log(error)
     )
   }
-
 }

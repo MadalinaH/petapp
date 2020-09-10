@@ -10,16 +10,14 @@ import { TokenObject } from '../../models/token-object';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
-
   loginForm: FormGroup;
-
   constructor(
     private apiSevice: ApiService,
     private cookieService: CookieService,
     private router: Router
-  ) { }
-
+  ) {}
   // on init, check for token; if it exists, skip login and redirect to main
   ngOnInit(): void {
     const petappToken = this.cookieService.get('petapp-token');
@@ -28,16 +26,13 @@ export class LoginComponent implements OnInit {
     }
     this.initForm();
   }
-
   initForm(): void {
     this.loginForm = new FormGroup({
       'username': new FormControl(null, Validators.required),
       'password': new FormControl(null, Validators.required)
     })
   }
-
   onLogin(): void {
     this.apiSevice.loginUser(this.loginForm.value);
   }
-
 }

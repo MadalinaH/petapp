@@ -1,27 +1,46 @@
-<div class="container-fluid px-0" id="login_page_main_container">
-
-  <div class="row align-items-center">
-
+<div id="login_page" class="container-fluid mt-2">
+  <div class="row no-gutters align-items-center">
     <div class="col text-center">
-      <h2>Login</h2>
-      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <h1><i class="fa fa-paw"></i></h1>
+      <form id="loginForm"
+            class="mt-2"
+            [formGroup]="loginForm"
+            (ngSubmit)="onLogin()">
         <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" formControlName="username">
+          <input id="username"
+                 type="text"
+                 class="form-control mt-1"
+                 formControlName="username"
+                 placeholder="Username">
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" formControlName="password">
+          <input id="password"
+                 type="password"
+                 class="form-control mt-1"
+                 formControlName="password"
+                 placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-success">Log in</button>
+        <button type="submit"
+                class="btn btn-custom mt-5">Log in
+        </button>
+        <div class="row">
+          <div class="col text-left mt-3">
+            <!-- implement functionality -->
+            <a class="loginLinks" href="#">Go back</a>
+          </div>
+          <div class="col text-right mt-3">
+            <!-- implement functionality -->
+            <a class="loginLinks" href="#">Forgot password?</a>
+          </div>
+        </div>
       </form>
     </div>
-
     <div class="col text-center">
       <img class="img-fluid" src="assets/images/login_page.jpeg">
-      <a href='https://www.freepik.com/vectors/people'>People vector created by pikisuperstar - www.freepik.com</a>
+      <a id="login_image"
+         href="https://www.freepik.com/vectors/people"
+         target="_blank">
+         People vector created by pikisuperstar - www.freepik.com</a>
     </div>
-
   </div>
-
 </div>
