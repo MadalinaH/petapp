@@ -74,6 +74,7 @@ input {
   height: 5.5rem;
 }
 #appointmentImage {
+  display: block;
   font-size: 0.75rem;
   font-weight: 100;
   color: rgb(51, 66, 74);

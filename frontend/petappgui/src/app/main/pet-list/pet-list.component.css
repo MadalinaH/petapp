@@ -1,1 +1,30 @@
-
+h5 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: rgb(51, 66, 74);
+}
+a, span, button {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(51, 66, 74);
+}
+.container {
+  width: 70%;
+  margin: 60px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.btn-custom {
+  width: 120px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: rgb(251, 211, 212);
+}
+#petList {
+  overflow: hidden;
+  background-color: rgb(248, 240, 241);
+}
+#leftCol {
+  padding-top: 14%;
+}

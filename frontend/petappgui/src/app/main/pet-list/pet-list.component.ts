@@ -7,16 +7,13 @@ import { Pet } from '../../models/pet';
   templateUrl: './pet-list.component.html',
   styleUrls: ['./pet-list.component.css']
 })
+
 export class PetListComponent implements OnInit {
-
   pets: Pet[];
-
   constructor(private apiService: ApiService) { }
-
   ngOnInit(): void {
     this.getPets();
   }
-
   getPets(): void {
     this.apiService.getPets().subscribe(
       pets =>  {
@@ -27,5 +24,4 @@ export class PetListComponent implements OnInit {
       }
     )
   }
-
 }

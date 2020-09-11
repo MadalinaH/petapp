@@ -71,6 +71,7 @@ input {
   background-color: #fff;
 }
 #petImage {
+  display: block;
   font-size: 0.75rem;
   font-weight: 100;
   color: rgb(51, 66, 74);

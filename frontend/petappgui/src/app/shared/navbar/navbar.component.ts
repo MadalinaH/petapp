@@ -10,7 +10,7 @@ import { ApiService } from '../../api.service';
 })
 
 export class NavbarComponent implements OnInit {
-  // $ Means property is an observable and we watch it for value changes
+  // $ Means the property is an observable and we watch it for value changes
   isLoggedIn$: Observable<boolean>;
   constructor(
     private apiService: ApiService,
@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
     this.isLoggedIn$ = this.apiService.isLoggedIn;
   }
   onLogout(): void {
-    // Check again if we need to delete the cookie here and not in the service
+    // To check again if we need to delete the cookie here and not in the service
     this.cookieService.delete('petapp-token', '/');
     this.apiService.logoutUser();
   }
