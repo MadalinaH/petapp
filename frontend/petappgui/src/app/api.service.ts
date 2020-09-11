@@ -22,7 +22,6 @@ export class ApiService {
      return false;
   }
 
-
   // the Behavior Subject class ensures all subscribers get the same value of the observable at any given time
   // on login and logout, we change the value of this boolean variable
   private loggedIn = new BehaviorSubject<boolean>(this.authCookieExists());

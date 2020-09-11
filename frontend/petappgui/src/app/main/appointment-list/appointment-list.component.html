@@ -1,18 +1,24 @@
-<div class="container">
-  <div class="list-group">
-    <a *ngFor="let appointment of appointments" class="list-group-item list-group-item-action"
-        routerLink="/main/appointment-info"
-        [queryParams]="{selectedId: appointment.id}">
-      <div class="d-flex w-100 justify-content-between">
-        <h5>{{appointment.date}} </h5>
-        <small>{{appointment.time}}</small>
+<div id="appointmentList" class="container-fluid mt-5">
+  <div class="row no-gutters">
+    <div id="leftCol" class="col-4 text-center">
+      <p class="mt-5">Need to schedule an appointment?</p>
+      <button class="btn btn-custom"
+             type="button"
+             routerLink="/main/edit-appointment"
+             [queryParams]="{selectedId: 0}">
+             <i class="fa fa-stethoscope"></i> Yes!
+      </button>
+    </div>
+    <div id="appointmens" class="col text-left">
+      <div class=list-group>
+        <a *ngFor="let appointment of appointments"
+           class="list-group-item list-group-item-action"
+           routerLink="/main/appointment-info"
+           [queryParams]="{selectedId: appointment.id}">
+           <h4>{{appointment.pet_name}} going to {{appointment.vet_name}}</h4>
+           <h5 class="inactiveLink">{{ appointment.date | date:"fullDate" }} at {{appointment.time}}</h5>
+        </a>
       </div>
-      <p>{{appointment.pet_name}}</p>
-      <p>{{appointment.vet_name}}</p>
-    </a>
+    </div>
   </div>
-  <button class="btn btn-info mt-5"
-          type="button"
-          routerLink="/main/edit-appointment"
-          [queryParams]="{selectedId: 0}">Add appointment</button>
 </div>

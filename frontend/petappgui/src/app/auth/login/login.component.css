@@ -6,12 +6,12 @@ h1 {
 form {
   margin: auto;
   padding: 1rem;
-  width: 350px;
-  height: 325px;
+  width: 21.875rem;
+  height: 20.3125rem;
   border-style: none;
   border-width: thin;
   border-color: rgb(187, 189, 186);
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   background-color: rgb(252, 243, 236);
 }
 input {
@@ -26,7 +26,7 @@ input {
   border-style: solid;
   border-width: thin;
   border-color: rgb(187, 189, 186);
-  border-radius: 5px;
+  border-radius: 0.3125rem;
 }
 .btn-custom {
   display: block;
@@ -48,7 +48,7 @@ input {
 #loginPage {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: rgb(252, 243, 236);
   /* remove scroll from page */
 }

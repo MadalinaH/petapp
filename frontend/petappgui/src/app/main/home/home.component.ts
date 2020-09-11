@@ -6,17 +6,14 @@ import { ApiService } from '../../api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
 
+export class HomeComponent implements OnInit {
   animalTriviaQuestion: string;
   animalTriviaAnswer: string;
-
   constructor(private apiSevice: ApiService) {}
-
   ngOnInit(): void {
     this.getAnotherTrivia();
   }
-
   getAnotherTrivia(): void {
     this.apiSevice.getFacts().subscribe(
       result => {
@@ -26,5 +23,4 @@ export class HomeComponent implements OnInit {
       }
     )
   }
-
 }

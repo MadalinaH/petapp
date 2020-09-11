@@ -1,7 +1,7 @@
 <div id="petList" class="container-fluid mt-3">
   <div class="row no-gutters">
     <div id="leftCol" class="col-3 text-center">
-      <span class="mt-5">You got another one, didn't you?</span>
+      <p class="mt-5">You got another one, didn't you?</p>
       <button class="btn btn-custom mt-3"
               type="button"
               routerLink="/main/edit-pet"
@@ -12,7 +12,14 @@
     <div class="col container text-center">
       <div *ngFor="let pet of pets">
         <img *ngIf="pet.pet_photo" src="{{pet.pet_photo}}" class="card-img-top img-fluid">
-        <img *ngIf="!pet.pet_photo" src="/assets/images/pet_placeholder.jpeg" class="card-img-top img-fluid">
+        <div *ngIf="!pet.pet_photo">
+          <img src="/assets/images/pet_placeholder.jpeg" class="card-img-top img-fluid">
+          <a id="petListImage"
+             href="https://www.freepik.com/vectors/background"
+             target="_blank">
+             Background vector created by rawpixel.com - www.freepik.com
+          </a>
+        </div>
         <div class="card-body text-left">
           <h5 class="card-title">{{pet.name}}</h5>
           <!-- show pet age next to name -->

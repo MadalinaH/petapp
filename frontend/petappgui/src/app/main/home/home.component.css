@@ -1,0 +1,27 @@
+h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgb(51, 66, 74);
+}
+p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: rgb(51, 66, 74);
+}
+.jumbotron {
+  width: 80%;
+}
+.btn-custom {
+  width: 7.5rem;
+  height: 2.5rem;
+  border-radius: 3.125rem;
+  background-color: rgb(42, 65, 71);
+  color: #fff;
+}
+#home {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(233, 236, 239);
+}

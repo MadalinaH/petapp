@@ -21,4 +21,5 @@ const routes: Routes = [];
   exports: [RouterModule],
   providers: [CookieService]
 })
+
 export class AuthModule {}

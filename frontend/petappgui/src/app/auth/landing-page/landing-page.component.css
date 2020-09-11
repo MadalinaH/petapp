@@ -4,10 +4,10 @@ h1 {
   color: rgb(51, 66, 74);
 }
 .buttons {
-  width: 250px;
-  height: 90px;
-  padding: 25px;
-  border-radius: 50px;
+  width: 15.625rem;
+  height: 5.625rem;
+  padding: 1.5625rem;
+  border-radius: 3.125rem;
   font-size: 1.4rem;
   font-weight: 400;
 }
@@ -18,10 +18,10 @@ h1 {
   color: rgb(51, 66, 74);
   text-decoration: none;
 }
-#lp {
+#landing {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   background-color: rgb(248, 240, 241);
   /* remove scroll from page */
 }

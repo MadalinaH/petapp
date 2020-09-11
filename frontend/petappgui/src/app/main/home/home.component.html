@@ -1,11 +1,20 @@
-<div class="container">
-  <div class="jumbotron">
-    <h1 class="display-4">Do you know?</h1>
-    <p class="lead">{{animalTriviaQuestion}}</p>
-    <hr class="my-4">
-    <p>{{animalTriviaAnswer}}</p>
-    <button class="btn btn-info btn-lg" (click)="getAnotherTrivia()">Give me another one!</button>
+<div id="home" class="container-fluid mt-5">
+  <div class="row no-gutters">
+    <div class="col text-center">
+      <!-- display here appointments for the week -->
+    </div>
+    <div class="col container text-left">
+      <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+          <h1 class="display-4">True or false?</h1>
+          <p class="lead">{{animalTriviaQuestion}}</p>
+          <hr class="my-4">
+          <!-- button to show the answer -->
+          <p>{{animalTriviaAnswer}}</p>
+          <p class="lead">Another one?</p>
+          <button class="btn btn-custom" (click)="getAnotherTrivia()">Yes!</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<!-- to display weekly appointments for the user's pets -->

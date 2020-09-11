@@ -3,21 +3,21 @@ h5 {
   font-weight: 400;
   color: rgb(51, 66, 74);
 }
-a, span, button {
-  font-size: 1rem;
+a, p, button {
+  font-size: 1.1rem;
   font-weight: 400;
   color: rgb(51, 66, 74);
 }
 .container {
   width: 70%;
-  margin: 60px auto;
+  margin: 3.75rem auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 1.25rem;
 }
 .btn-custom {
-  width: 120px;
-  height: 40px;
+  width: 7.5rem;
+  height: 2.5rem;
   border-radius: 50px;
   background-color: rgb(251, 211, 212);
 }
@@ -27,4 +27,11 @@ a, span, button {
 }
 #leftCol {
   padding-top: 14%;
+}
+#petListImage {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 100;
+  color: rgb(51, 66, 74);
+  text-decoration: none;
 }

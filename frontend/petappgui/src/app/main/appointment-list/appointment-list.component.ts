@@ -7,16 +7,13 @@ import { ApiService } from '../../api.service';
   templateUrl: './appointment-list.component.html',
   styleUrls: ['./appointment-list.component.css']
 })
+
 export class AppointmentListComponent implements OnInit {
-
   appointments: Appointment[];
-
   constructor(private apiService: ApiService) {}
-
   ngOnInit(): void {
     this.getAppointments();
   }
-
   getAppointments() {
     this.apiService.getAppointments().subscribe(
       appointments =>  {
@@ -27,5 +24,4 @@ export class AppointmentListComponent implements OnInit {
       }
     )
   }
-
 }
