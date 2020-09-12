@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     private cookieService: CookieService,
     private router: Router
   ) {}
-  // on init, check for token; if it exists, skip login and redirect to main
+  // On init, we check for the token and if it exists, we skip the login and redirect to main
   ngOnInit(): void {
     const petappToken = this.cookieService.get('petapp-token');
     if(petappToken) {

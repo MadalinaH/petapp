@@ -1,19 +1,42 @@
-<p>{{appointment.pet_name}}</p>
-<p>{{appointment.vet_name}}</p>
-<p>{{appointment.date}}, {{appointment.time}}</p>
-<p>Notes: {{appointment.notes}}</p>
-
-<div>
-  <button class="btn btn-light" type="button" (click)="goBack()">Back</button>
-</div>
-
-<div>
-  <button class="btn btn-success"
-          type="button"
-          routerLink="/main/edit-appointment"
-          [queryParams]="{selectedId: appointment.id}">Edit</button>
-</div>
-
-<div>
-  <button class="btn btn-danger" type="button" (click)="deleteAppointment()">Delete</button>
+<div id="appointmentInfo" class="container-fluid">
+  <div class="row no-gutters mt-5">
+    <div id="info" class="col text-left">
+      <h2>
+        <i class="fa fa-user-md"></i> Appointment for {{appointment.pet_name}}
+      </h2>
+      <h4>at {{appointment.vet_name}} vet</h4>
+      <h4>on {{ appointment.date | date:"fullDate" }} at {{appointment.time}}</h4>
+      <h4>Notes: {{appointment.notes}}</h4>
+      <div class="row no-gutters align-items-center mt-5">
+        <div class="col-4">
+          <button id="back"
+                  class="btn"
+                  type="button"
+                  (click)="goBack()">Go back
+          </button>
+        </div>
+        <div class="col-4">
+          <button id="edit"
+                  class="btn"
+                  type="button"
+                  routerLink="/main/edit-appointment"
+                  [queryParams]="{selectedId: appointment.id}">Edit appointment
+          </button>
+        </div>
+        <div class="col-4">
+          <button id="delete"
+                  class="btn"
+                  type="button"
+                  (click)="deleteAppointment()">Delete appointment
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col text-center">
+      <img class="img-fluid" src="assets/images/appointment_info.jpg">
+      <a id="appInfoImage"
+         href="https://www.freepik.com/vectors/people">Designed by pch.vector - www.freepik.com
+      </a>
+    </div>
+ </div>
 </div>

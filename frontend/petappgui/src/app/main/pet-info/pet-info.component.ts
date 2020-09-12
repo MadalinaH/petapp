@@ -10,30 +10,25 @@ import { Router } from '@angular/router';
   templateUrl: './pet-info.component.html',
   styleUrls: ['./pet-info.component.css']
 })
+
 export class PetInfoComponent implements OnInit {
-
   pet: Pet = {} as Pet;
-
   selectedId: number;
-
   constructor(
     private apiService: ApiService,
     private location: Location,
     private route: ActivatedRoute,
     private router: Router
   ) {}
-
   ngOnInit(): void {
     this.getSelectedId();
     this.getPet();
   }
-
   getSelectedId(): void {
     this.route.queryParams.subscribe(params => {
       this.selectedId = params['selectedId'];
     });
   }
-
   getPet(): void {
     this.apiService.getPet(this.selectedId).subscribe(
       pet =>  {
@@ -44,7 +39,6 @@ export class PetInfoComponent implements OnInit {
       }
     )
   }
-
   deletePet(): void {
     this.apiService.deletePet(this.selectedId).subscribe(
       result => {
@@ -55,13 +49,10 @@ export class PetInfoComponent implements OnInit {
       }
     )
   }
-
   editPet(): void {
     console.log('');
   }
-
   goBack(): void {
     this.location.back();
   }
-
 }

@@ -1,26 +1,59 @@
-<h2>{{pet.name}}</h2>
-<h3>{{pet.sex}}</h3>
-<h3>{{pet.type}}</h3>
-<h3>{{pet.breed}}</h3>
-<h3>{{pet.date_of_birth}}</h3>
-<h3>{{pet.microchip_no}}</h3>
-<h3>{{pet.passport_no}}</h3>
-
-<!-- to display the appointments for this pet -->
-
-<!-- to create button for pet medical medical info -->
-
-<div>
-  <button class="btn btn-light" type="button" (click)="goBack()">Back</button>
-</div>
-
-<div>
-  <button class="btn btn-success"
-          type="button"
-          routerLink="/main/edit-pet"
-          [queryParams]="{selectedId: pet.id}">Edit</button>
-</div>
-
-<div>
-  <button class="btn btn-danger" type="button" (click)="deletePet()">Delete</button>
+<div id="petInfo" class="container-fluid">
+  <div class="row no-gutters mt-5">
+    <div id="info" class="col text-left">
+      <span>
+          <i class="fa fa-paw"></i> {{pet.name}} info
+      </span>
+      <img *ngIf="pet.pet_photo" src="{{pet.pet_photo}}" class="img-fluid petImage">
+      <span *ngIf="!pet.pet_photo">
+        <img id="petImage"
+             class="img-fluid"
+             src="/assets/images/pet_placeholder.jpeg" >
+      </span>
+      <h4>{{pet.sex}}</h4>
+      <h4>{{pet.type}}</h4>
+      <h4>Breed: {{pet.breed}}</h4>
+      <h4>Birthday: {{ pet.date_of_birth | date:'longDate' }}</h4>
+      <h4>Microchip: {{pet.microchip_no}}</h4>
+      <h4>Passport info: {{pet.passport_no}}</h4>
+      <!-- TO DO - show all appointments for the pet -->
+      <!-- TO DO - add button for pet medical info -->
+      <div class="row no-gutters align-items-center mt-5">
+        <div class="col-4">
+          <button id="back"
+                  class="btn"
+                  type="button"
+                  (click)="goBack()">Go back
+          </button>
+        </div>
+        <div class="col-4">
+          <button id="edit"
+                  class="btn"
+                  type="button"
+                  routerLink="/main/edit-pet"
+                  [queryParams]="{selectedId: pet.id}">Edit info
+          </button>
+        </div>
+        <div class="col-4">
+          <button id="delete"
+                  class="btn btn-custom"
+                  type="button"
+                  (click)="deletePet()">Delete info
+          </button>
+        </div>
+      </div>
+      <!-- <a id="petPlaceImage"
+         class="text-center mt-2"
+         href="https://www.freepik.com/vectors/background"
+         target="_blank">
+         Designed by rawpixel.com - www.freepik.com
+      </a> -->
+    </div>
+    <div class="col text-center mt-5">
+      <img class="img-fluid" src="assets/images/pet_info.jpg">
+      <a id="petInfoImage"
+         href="https://www.freepik.com/vectors/people">Designed by stories - www.freepik.com
+      </a>
+    </div>
+  </div>
 </div>

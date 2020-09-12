@@ -10,30 +10,25 @@ import { Router } from '@angular/router';
   templateUrl: './appointment-info.component.html',
   styleUrls: ['./appointment-info.component.css']
 })
+
 export class AppointmentInfoComponent implements OnInit {
-
   appointment: Appointment = {} as Appointment;
-
   selectedId: number;
-
   constructor(
     private apiService: ApiService,
     private location: Location,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
-
+  ) {}
   ngOnInit(): void {
     this.getSelectedId();
     this.getAppointment();
   }
-
   getSelectedId(): void {
     this.route.queryParams.subscribe(params => {
       this.selectedId = params['selectedId'];
     });
   }
-
   getAppointment(): void {
     this.apiService.getAppointment(this.selectedId).subscribe(
       appointment =>  {
@@ -44,7 +39,6 @@ export class AppointmentInfoComponent implements OnInit {
       }
     )
   }
-
   deleteAppointment(): void {
     this.apiService.deleteAppointment(this.selectedId).subscribe(
       result => {
@@ -55,9 +49,7 @@ export class AppointmentInfoComponent implements OnInit {
       }
     )
   }
-
   goBack(): void {
     this.location.back();
   }
-
 }
