@@ -13,6 +13,9 @@
                  formControlName="username"
                  placeholder="Username">
         </div>
+        <p *ngIf="loginForm.controls.username.invalid"
+           class=" text-left validationError">This field cannot be empty.
+        </p>
         <div class="form-group">
           <input id="password"
                  type="password"
@@ -20,8 +23,12 @@
                  formControlName="password"
                  placeholder="Password">
         </div>
+        <p *ngIf="loginForm.controls.password.invalid"
+           class="text-left validationError">This field cannot be empty.
+        </p>
         <button type="submit"
-                class="btn btn-custom mt-5">Log in
+                class="btn btn-custom mt-5"
+                [disabled]="!loginForm.valid">Log in
         </button>
         <div class="row no-gutters">
           <div class="col text-left mt-3">

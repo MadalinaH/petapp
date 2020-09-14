@@ -28,10 +28,9 @@ input {
   border-radius: 0.3125rem;
 }
 .validationError {
-  /* margin: 0; */
   font-size: 0.80rem;
   font-weight: 100;
-  color: rgb(51, 66, 74);
+  color: rgb(216,0,0);
 }
 .btn-custom {
   display: block;

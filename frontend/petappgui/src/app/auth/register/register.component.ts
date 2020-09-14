@@ -11,12 +11,14 @@ import { ApiService } from '../../api.service';
 
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
+  formValid: boolean = false;
   constructor(
     private apiSevice: ApiService,
     private router: Router
   ) {}
   ngOnInit(): void {
     this.initForm();
+    this.onChanges();
   }
   initForm(): void {
     this.registerForm = new FormGroup({
@@ -35,6 +37,27 @@ export class RegisterComponent implements OnInit {
     },
     // General validator for the entire form
     {validators: this.passwordMatch});
+  }
+  // We check for errors and update the form status as the form is filled-in
+  onChanges(): void {
+    this.registerForm.valueChanges.subscribe(result => {
+     this.changeFormStatus();
+    })
+  }
+  // TO DO: refactor - loop through form fields instead
+  changeFormStatus() {
+    if(!this.registerForm.errors
+      && !this.registerForm.get('first_name').errors
+      && !this.registerForm.get('last_name').errors
+      && !this.registerForm.get('username').errors
+      && !this.registerForm.get('email').errors
+      && !this.registerForm.get('password').errors
+      && !this.registerForm.get('confirm_password').errors) {
+        this.formValid = true;
+      }
+      else {
+        this.formValid = false;
+      }
   }
   // Custom validator which takes as argument the form group because it is applied to the entire form, not just to a single field
   passwordMatch(control: FormGroup): {passwordsDontMatch: boolean} {
