@@ -21,11 +21,12 @@
           </a>
         </div>
         <div class="card-body text-left">
-          <h5 class="card-title">{{pet.name}}</h5>
+          <h5 class="card-title">{{pet.name}}, years old</h5>
           <!-- TO DO - show pet age next to pet name -->
           <a class="btn btn-custom"
               routerLink="/main/pet-info"
-              [queryParams]="{selectedId: pet.id}">Details</a>
+              [queryParams]="{selectedId: pet.id}">Details
+          </a>
         </div>
       </div>
    </div>

@@ -1,15 +1,28 @@
 <div id="petInfo" class="container-fluid">
   <div class="row no-gutters mt-5">
     <div id="info" class="col text-left">
-      <span>
-          <i class="fa fa-paw"></i> {{pet.name}} info
-      </span>
-      <img *ngIf="pet.pet_photo" src="{{pet.pet_photo}}" class="img-fluid petImage">
-      <span *ngIf="!pet.pet_photo">
-        <img id="petImage"
-             class="img-fluid"
-             src="/assets/images/pet_placeholder.jpeg" >
-      </span>
+      <div class="row no-gutters">
+        <div class="col text-left mt-5">
+          <span>
+              <i class="fa fa-paw"></i> {{pet.name}}'s info
+          </span>
+        </div>
+        <div class="col text-right">
+          <img *ngIf="pet.pet_photo" src="{{pet.pet_photo}}" class="img-fluid petImage">
+          <span *ngIf="!pet.pet_photo">
+            <img id="petImage"
+                 class="img-fluid"
+                 src="/assets/images/pet_placeholder.jpeg" >
+          </span>
+          <a *ngIf="!pet.pet_photo"
+             id="petPlaceImage"
+             class="text-center mt-2"
+             href="https://www.freepik.com/vectors/background"
+             target="_blank">
+             Designed by rawpixel.com - www.freepik.com
+          </a>
+        </div>
+      </div>
       <h4>{{pet.sex}}</h4>
       <h4>{{pet.type}}</h4>
       <h4>Breed: {{pet.breed}}</h4>
@@ -42,12 +55,6 @@
           </button>
         </div>
       </div>
-      <!-- <a id="petPlaceImage"
-         class="text-center mt-2"
-         href="https://www.freepik.com/vectors/background"
-         target="_blank">
-         Designed by rawpixel.com - www.freepik.com
-      </a> -->
     </div>
     <div class="col text-center mt-5">
       <img class="img-fluid" src="assets/images/pet_info.jpg">

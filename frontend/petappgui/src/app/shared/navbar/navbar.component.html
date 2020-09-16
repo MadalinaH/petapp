@@ -1,5 +1,6 @@
 <nav id="mainNavbar" class="navbar navbar-custom navbar-expand-md py-1 fixed-top">
   <a class="navbar-brand" routerLink="/auth/login"><i class="fa fa-paw"></i> PetBook</a>
+  <!-- TO DO - add functionality for toggle navigation -->
   <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,7 +15,11 @@
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item mr-auto">
-        <button *ngIf="isLoggedIn$ | async" class="btn btn-danger" type="button" (click)="onLogout()">Log out</button>
+        <button *ngIf="isLoggedIn$ | async"
+                type="button"
+                class="btn btn-custom"
+                (click)="onLogout()">Log out
+        </button>
       </li>
     </ul>
   </div>

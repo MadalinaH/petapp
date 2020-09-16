@@ -9,3 +9,10 @@
 .navbar-custom {
   background-color: rgb(51, 66, 74);
 }
+.btn-custom {
+  width: 7rem;
+  background-color: rgb(232, 80, 92);
+  border-radius: 3.125rem;
+  cursor: pointer;
+  color: #fff;
+}
