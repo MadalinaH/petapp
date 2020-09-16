@@ -54,6 +54,11 @@ input {
 .petLinks:hover {
   text-decoration: underline;
 }
+.validationError {
+  font-size: 0.80rem;
+  font-weight: 100;
+  color: rgb(216,0,0);
+}
 #petPage {
   margin: 3.75rem auto 0 auto;
   overflow-x: hidden;

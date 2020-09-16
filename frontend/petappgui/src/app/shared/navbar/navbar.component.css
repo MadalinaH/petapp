@@ -16,3 +16,6 @@
   cursor: pointer;
   color: #fff;
 }
+.btn-custom:hover {
+  color: rgb(51, 66, 74);
+}

@@ -3,7 +3,7 @@
     <div class="col text-center">
       <h2 *ngIf="selectedId==0"><i class="fa fa-user-md"></i> Let's go to the vet!</h2>
       <h2 *ngIf="selectedId!=0"><i class="fa fa-user-md"></i> Wanna change something?</h2>
-      <form id="registerForm"
+      <form id="appointmentForm"
             class="text-left mt-3"
             *ngIf="this.appointmentForm"
             [formGroup]="appointmentForm"
@@ -20,6 +20,9 @@
             </option>
           </select>
         </div>
+        <p *ngIf="selectedId==0 && appointmentForm.controls.vet_id.invalid"
+           class="validationError">This field cannot be empty.
+        </p>
         <div class="form-group">
           <label for="pet_id">Choose your pet</label>
           <select id="pet_id"
@@ -32,6 +35,9 @@
             </option>
           </select>
         </div>
+        <p *ngIf="selectedId==0 && appointmentForm.controls.pet_id.invalid"
+           class="validationError">This field cannot be empty.
+        </p>
         <div class="form-group">
           <label for="date">Choose the date</label>
           <input id="date"
@@ -39,6 +45,9 @@
                  class="form-control"
                  formControlName="date">
         </div>
+        <p *ngIf="selectedId==0 && appointmentForm.controls.date.invalid"
+           class="validationError">This field cannot be empty.
+        </p>
         <div class="form-group">
           <label for="time">Choose the time</label>
           <input id="time"
@@ -46,6 +55,9 @@
                  class="form-control"
                  formControlName="time">
         </div>
+        <p *ngIf="selectedId==0 && appointmentForm.controls.time.invalid"
+           class="validationError">This field cannot be empty.
+        </p>
         <div class="form-group">
           <label for="notes">Notes</label>
           <textarea id="notes"
@@ -58,7 +70,9 @@
             <button type="submit" class="btn btn-danger mr-2">Cancel</button>
           </div>
           <div class="col">
-            <button type="submit" class="btn btn-custom ml-2">Save</button>
+            <button type="submit"
+                    class="btn btn-custom ml-2"
+                    [disabled]="!appointmentForm.valid">Save</button>
           </div>
         </div>
         <div class="col text-center mt-3">

@@ -25,3 +25,12 @@ p {
   overflow: hidden;
   background-color: rgb(233, 236, 239);
 }
+#firstCol {
+  margin: auto 6rem auto 5rem;
+  padding: 3rem;
+  border-style: outset;
+  border-width: thin;
+  border-color: rgb(187, 189, 186);
+  border-radius: 0.3125rem;
+  background-color: rgb(233, 236, 239);
+}
