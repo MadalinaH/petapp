@@ -11,9 +11,12 @@
     </div>
     <div class="col container text-center">
       <div *ngFor="let pet of pets">
-        <img *ngIf="pet.pet_photo" src="{{pet.pet_photo}}" class="card-img-top img-fluid">
+        <img *ngIf="pet.pet_photo"
+             src="{{pet.pet_photo}}"
+             class="card-img-top img-fluid">
         <div *ngIf="!pet.pet_photo">
-          <img src="/assets/images/pet_placeholder.jpeg" class="card-img-top img-fluid">
+          <img src="/assets/images/pet_placeholder.jpeg"
+               class="card-img-top img-fluid">
           <a id="petListImage"
              href="https://www.freepik.com/vectors/background"
              target="_blank">
@@ -21,8 +24,9 @@
           </a>
         </div>
         <div class="card-body text-left">
-          <h5 class="card-title">{{pet.name}}, years old</h5>
-          <!-- TO DO - show pet age next to pet name -->
+          <h5 class="card-title">
+            {{pet.name}}, {{petAge(pet.date_of_birth) | i18nPlural: itemPluralMapping['year']}} old
+          </h5>
           <a class="btn btn-custom"
               routerLink="/main/pet-info"
               [queryParams]="{selectedId: pet.id}">Details

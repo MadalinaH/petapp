@@ -15,7 +15,7 @@
                    type="text"
                    formControlName="name">
         </div>
-        <p *ngIf="selectedId==0 && petForm.controls.name.invalid"
+        <p *ngIf="petForm.controls.name.invalid"
            class="validationError">This field cannot be empty.
         </p>
         <div class="form-group">
@@ -32,7 +32,7 @@
             <option value="Other">Other</option>
           </select>
         </div>
-        <p *ngIf="selectedId==0 && petForm.controls.type.invalid"
+        <p *ngIf="petForm.controls.type.invalid"
            class="validationError">This field cannot be empty.
         </p>
         <div class="form-group">
@@ -46,7 +46,7 @@
             <option value="Male">Male</option>
           </select>
         </div>
-        <p *ngIf="selectedId==0 && petForm.controls.sex.invalid"
+        <p *ngIf="petForm.controls.sex.invalid"
            class="validationError">This field cannot be empty.
         </p>
         <div class="form-group">
@@ -56,7 +56,7 @@
                  type="date"
                  formControlName="date_of_birth">
         </div>
-        <p *ngIf="selectedId==0 && petForm.controls.date_of_birth.invalid"
+        <p *ngIf="petForm.controls.date_of_birth.invalid"
            class="validationError">This field cannot be empty.
         </p>
         <div class="form-group">
@@ -66,7 +66,7 @@
                    type="text"
                    formControlName="breed">
         </div>
-        <p *ngIf="selectedId==0 && petForm.controls.breed.invalid"
+        <p *ngIf="petForm.controls.breed.invalid"
            class="validationError">This field cannot be empty.
         </p>
         <div class="form-group">
@@ -76,7 +76,7 @@
                    type="text"
                    formControlName="microchip_no">
         </div>
-        <p *ngIf="selectedId==0 && petForm.controls.microchip_no.invalid"
+        <p *ngIf="petForm.controls.microchip_no.invalid"
            class="validationError">This field cannot be empty.
         </p>
         <div class="form-group">
@@ -86,7 +86,7 @@
                    type="text"
                    formControlName="passport_no">
         </div>
-        <p *ngIf="selectedId==0 && petForm.controls.passport_no.invalid"
+        <p *ngIf="petForm.controls.passport_no.invalid"
            class="validationError">This field cannot be empty.
         </p>
         <div class="row no-gutters">
@@ -96,7 +96,8 @@
           <div class="col">
             <button type="submit"
                     class="btn btn-custom ml-2"
-                    [disabled]="!petForm.valid">Save</button>
+                    [disabled]="!petForm.valid">Save
+            </button>
           </div>
         </div>
         <div class="col text-center mt-3">

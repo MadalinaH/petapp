@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { I18nPluralPipe } from '@angular/common';
 import { ApiService } from '../../api.service';
 import { Pet } from '../../models/pet';
 
@@ -10,7 +11,7 @@ import { Pet } from '../../models/pet';
 
 export class PetListComponent implements OnInit {
   pets: Pet[];
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
   ngOnInit(): void {
     this.getPets();
   }
@@ -23,5 +24,15 @@ export class PetListComponent implements OnInit {
         console.log(error);
       }
     )
+  }
+  petAge(birthDate) {
+    return (new Date()).getFullYear() - (new Date(birthDate)).getFullYear();
+  }
+  itemPluralMapping = {
+    'year': {
+      '=0' : 'under 1 year',
+      '=1' : '1 year',
+      'other' : '# years'
+    }
   }
 }
