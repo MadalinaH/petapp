@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { FormGroup,
+         FormControl,
+         FormArray,
+         Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
 import { TokenObject } from '../../models/token-object';

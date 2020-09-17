@@ -91,7 +91,11 @@
         </p>
         <div class="row no-gutters">
           <div class="col">
-            <button type="submit" class="btn btn-danger mr-2">Cancel</button>
+            <!-- TO DO - when editing pet, Cancel button must direct to pet info, not pet list -->
+            <button type="submit"
+                    class="btn btn-danger mr-2"
+                    routerLink="/main/pets">Cancel
+            </button>
           </div>
           <div class="col">
             <button type="submit"
@@ -99,10 +103,6 @@
                     [disabled]="!petForm.valid">Save
             </button>
           </div>
-        </div>
-        <div class="col text-center mt-3">
-          <!-- TO DO - implement functionality for Go back button -->
-          <a class="petLinks" href="#">Go back</a>
         </div>
       </form>
     </div>
