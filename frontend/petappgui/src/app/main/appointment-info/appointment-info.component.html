@@ -11,14 +11,12 @@
         <div class="col-4">
           <button id="back"
                   class="btn"
-                  type="button"
                   (click)="goBack()">Go back
           </button>
         </div>
         <div class="col-4">
           <button id="edit"
                   class="btn"
-                  type="button"
                   routerLink="/main/edit-appointment"
                   [queryParams]="{selectedId: appointment.id}">Edit appointment
           </button>
@@ -26,7 +24,6 @@
         <div class="col-4">
           <button id="delete"
                   class="btn"
-                  type="button"
                   (click)="deleteAppointment()">Delete appointment
           </button>
         </div>

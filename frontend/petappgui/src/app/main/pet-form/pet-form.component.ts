@@ -1,6 +1,10 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
+import { FormGroup,
+         FormControl,
+         FormArray,
+         Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { ApiService } from '../../api.service';
 
@@ -15,6 +19,7 @@ export class PetFormComponent implements OnInit {
   selectedId: number;
   constructor(
     private route: ActivatedRoute,
+    private location: Location,
     private apiService: ApiService,
     private router:Router
   ) {}
@@ -75,5 +80,8 @@ export class PetFormComponent implements OnInit {
         }
       );
     }
+  }
+  goBack(): void {
+    this.location.back();
   }
 }

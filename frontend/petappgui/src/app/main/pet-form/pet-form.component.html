@@ -92,9 +92,8 @@
         <div class="row no-gutters">
           <div class="col">
             <!-- TO DO - when editing pet, Cancel button must direct to pet info, not pet list -->
-            <button type="submit"
-                    class="btn btn-danger mr-2"
-                    routerLink="/main/pets">Cancel
+            <button class="btn btn-danger mr-2"
+                    (click)="goBack()">Cancel
             </button>
           </div>
           <div class="col">

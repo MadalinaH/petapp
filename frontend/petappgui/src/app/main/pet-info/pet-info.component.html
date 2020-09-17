@@ -35,14 +35,12 @@
         <div class="col-4">
           <button id="back"
                   class="btn"
-                  type="button"
                   (click)="goBack()">Go back
           </button>
         </div>
         <div class="col-4">
           <button id="edit"
                   class="btn"
-                  type="button"
                   routerLink="/main/edit-pet"
                   [queryParams]="{selectedId: pet.id}">Edit info
           </button>
@@ -50,7 +48,6 @@
         <div class="col-4">
           <button id="delete"
                   class="btn btn-custom"
-                  type="button"
                   (click)="deletePet()">Delete info
           </button>
         </div>

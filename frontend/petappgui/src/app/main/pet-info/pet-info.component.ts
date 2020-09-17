@@ -49,9 +49,6 @@ export class PetInfoComponent implements OnInit {
       }
     )
   }
-  editPet(): void {
-    console.log('');
-  }
   goBack(): void {
     this.location.back();
   }
