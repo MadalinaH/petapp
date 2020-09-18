@@ -30,12 +30,11 @@
       <h4>Microchip: {{pet.microchip_no}}</h4>
       <h4>Passport info: {{pet.passport_no}}</h4>
       <!-- TO DO - show all appointments for the pet -->
-      <!-- TO DO - add button for pet medical info -->
       <div class="row no-gutters align-items-center mt-5">
         <div class="col-4">
-          <button id="back"
+          <button id="addAppointment"
                   class="btn"
-                  (click)="goBack()">Go back
+                  (click)="addAppointment()">Add appointment
           </button>
         </div>
         <div class="col-4">
@@ -51,6 +50,9 @@
                   (click)="deletePet()">Delete info
           </button>
         </div>
+      </div>
+      <div class="text-center mt-3">
+        <a class="backLink" (click)="goBack()">Go back</a>
       </div>
     </div>
     <div class="col text-center mt-5">

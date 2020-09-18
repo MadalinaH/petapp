@@ -27,17 +27,11 @@
            class="text-left validationError">This field cannot be empty.
         </p>
         <button type="submit"
-                class="btn btn-custom mt-5"
+                class="btn btn-custom mt-4"
                 [disabled]="!loginForm.valid">Log in
         </button>
-        <div class="row no-gutters">
-          <div class="col text-left mt-3">
-            <a class="loginLinks" routerLink='/'>Go back</a>
-          </div>
-          <div class="col text-right mt-3">
-            <!-- TO DO - implement functionality for Forgot password -->
-            <a class="loginLinks">Forgot password?</a>
-          </div>
+        <div class="mt-3">
+          <a class="loginLinks" routerLink='/'>Go back</a>
         </div>
       </form>
     </div>

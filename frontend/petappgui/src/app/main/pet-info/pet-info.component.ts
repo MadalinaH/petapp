@@ -39,6 +39,10 @@ export class PetInfoComponent implements OnInit {
       }
     )
   }
+  // TO DO - implement functionality for add appointment button
+  addAppointment(): void {
+    console.log('');
+  }
   deletePet(): void {
     this.apiService.deletePet(this.selectedId).subscribe(
       result => {
