@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { PetInfoComponent } from './pet-info/pet-info.component';
 import { PetListComponent } from './pet-list/pet-list.component';
 import { ApiService } from '../api.service';
+import { ConfirmDialogService } from '../confirm-dialog.service';
 import { SharedModule } from '../shared/shared.module';
 import { PetFormComponent } from './pet-form/pet-form.component';
 
@@ -24,14 +25,17 @@ const routes: Routes = [];
     PetListComponent,
     PetFormComponent
   ],
+  exports: [RouterModule],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     SharedModule
   ],
-  exports: [RouterModule],
-  providers: [ApiService]
+  providers: [
+    ApiService,
+    ConfirmDialogService
+  ]
 })
 
 export class MainModule {}

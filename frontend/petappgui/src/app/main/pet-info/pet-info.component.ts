@@ -2,6 +2,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ApiService } from '../../api.service';
+import { ConfirmDialogService } from '../../confirm-dialog.service';
 import { Pet } from '../../models/pet';
 import { Router } from '@angular/router';
 
@@ -16,6 +17,7 @@ export class PetInfoComponent implements OnInit {
   selectedId: number;
   constructor(
     private apiService: ApiService,
+    private dialogService: ConfirmDialogService,
     private location: Location,
     private route: ActivatedRoute,
     private router: Router
@@ -44,14 +46,23 @@ export class PetInfoComponent implements OnInit {
     console.log('');
   }
   deletePet(): void {
-    this.apiService.deletePet(this.selectedId).subscribe(
-      result => {
-        this.router.navigate(['/main/pets']);
-      },
-      error => {
-        console.log(error);
+    this.dialogService.open({
+      title: 'Confirm action',
+      message: 'Are you sure?',
+      cancelText: 'No',
+      confirmText: 'Yes'
+    });
+    this.dialogService.confirmed().subscribe(confirmed => {
+      if (confirmed) {
+        this.apiService.deletePet(this.selectedId).subscribe(
+          result => {
+            this.router.navigate(['/main/pets']);
+          },
+          error => {
+            console.log(error);
+          });
       }
-    )
+    });
   }
   goBack(): void {
     this.location.back();
