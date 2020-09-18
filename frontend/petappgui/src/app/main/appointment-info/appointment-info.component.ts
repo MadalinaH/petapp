@@ -2,6 +2,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ApiService } from '../../api.service';
+import { ConfirmDialogService } from '../../confirm-dialog.service';
 import { Appointment } from '../../models/appointment';
 import { Router } from '@angular/router';
 
@@ -16,6 +17,7 @@ export class AppointmentInfoComponent implements OnInit {
   selectedId: number;
   constructor(
     private apiService: ApiService,
+    private dialogService: ConfirmDialogService,
     private location: Location,
     private route: ActivatedRoute,
     private router: Router
@@ -40,14 +42,23 @@ export class AppointmentInfoComponent implements OnInit {
     )
   }
   deleteAppointment(): void {
-    this.apiService.deleteAppointment(this.selectedId).subscribe(
-      result => {
-        this.router.navigate(['/main/appointments']);
-      },
-      error => {
-        console.log(error);
+    this.dialogService.open({
+      title: 'Confirm action',
+      message: 'Sure you wanna delete this appointment?',
+      cancelText: 'No',
+      confirmText: "Yes"
+    });
+    this.dialogService.confirmed().subscribe(confirmed => {
+      if (confirmed) {
+        this.apiService.deleteAppointment(this.selectedId).subscribe(
+          result => {
+            this.router.navigate(['/main/pets']);
+          },
+          error => {
+            console.log(error);
+          });
       }
-    )
+    });
   }
   goBack(): void {
     this.location.back();

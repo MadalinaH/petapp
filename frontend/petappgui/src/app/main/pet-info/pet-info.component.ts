@@ -48,9 +48,9 @@ export class PetInfoComponent implements OnInit {
   deletePet(): void {
     this.dialogService.open({
       title: 'Confirm action',
-      message: 'Are you sure?',
+      message: 'Sure you wanna delete this pet?',
       cancelText: 'No',
-      confirmText: 'Yes'
+      confirmText: "Yes"
     });
     this.dialogService.confirmed().subscribe(confirmed => {
       if (confirmed) {
