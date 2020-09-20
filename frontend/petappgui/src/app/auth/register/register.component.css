@@ -52,7 +52,7 @@ input {
 }
 #registerPage {
   margin: 0;
-  padding-top: 0.625rem;
+  padding-top: 1.5rem;
   overflow-x: hidden;
   background-color: rgb(253, 226, 219);
   /* remove scroll from page */

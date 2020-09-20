@@ -31,7 +31,7 @@ h4 {
 }
 #petInfo {
   padding-bottom: 1rem;
-  margin: 3rem auto 0 auto;
+  margin: 0 auto;
   overflow-x: hidden;
   background-color: rgb(236, 236, 236);
   /* remove scroll from page */

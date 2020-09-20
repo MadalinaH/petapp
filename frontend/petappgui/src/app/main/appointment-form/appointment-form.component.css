@@ -60,7 +60,8 @@ input {
   color: rgb(216,0,0);
 }
 #appointmentPage {
-  margin: 6.25rem auto 0 auto;
+  margin: 0 auto;
+  padding-top: 1.5rem;
   overflow-x: hidden;
   background-color: #fff;
   /* remove scroll from page */

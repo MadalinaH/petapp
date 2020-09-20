@@ -60,7 +60,8 @@ input {
   color: rgb(216,0,0);
 }
 #petPage {
-  margin: 3.75rem auto 0 auto;
+  margin: 0 auto;
+  padding-top: 1rem;
   overflow-x: hidden;
   background-color: rgb(255, 232, 231);
   /* remove scroll from page */

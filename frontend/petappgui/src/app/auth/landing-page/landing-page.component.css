@@ -4,9 +4,9 @@ h1 {
   color: rgb(51, 66, 74);
 }
 .buttons {
-  width: 15.625rem;
-  height: 5.625rem;
-  padding: 1.5625rem;
+  width: 100%;
+  height: 5rem;
+  padding: 1.40rem;
   border-radius: 3.125rem;
   font-size: 1.4rem;
   font-weight: 400;
