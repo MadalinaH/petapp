@@ -55,7 +55,6 @@ input {
   padding: 0;
   overflow: hidden;
   background-color: rgb(252, 243, 236);
-  /* remove scroll from page */
 }
 #loginImage {
   display: block;
