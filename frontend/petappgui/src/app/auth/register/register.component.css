@@ -3,7 +3,7 @@ h2 {
 }
 form {
   margin: auto;
-  width: 37.5rem;
+  width: 65%;
   height: auto;
   border-style: none;
   border-width: thin;
@@ -51,8 +51,7 @@ input {
   text-decoration: underline;
 }
 #registerPage {
-  margin: 0;
-  padding-top: 1rem;
+  padding: 1rem;
   overflow-x: hidden;
   background-color: rgb(253, 226, 219);
 }

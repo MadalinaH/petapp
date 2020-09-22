@@ -6,10 +6,10 @@ h1 {
 .buttons {
   width: 100%;
   height: 5rem;
-  padding: 1.40rem;
+  padding: 1.5rem;
   border-radius: 3.125rem;
-  font-size: 1.4rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 .button {
   display: block;
@@ -19,19 +19,18 @@ h1 {
   color: rgb(51, 66, 74);
   text-decoration: none;
 }
-#landing {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+#landingPage {
+  overflow-x: hidden;
+  padding: 1.3rem 1rem;
   background-color: rgb(248, 240, 241);
 }
-#register {
+#registerButton {
   background-color: rgb(252, 108, 108);
 }
-#login {
+#loginButton {
   background-color: rgb(255, 172, 81);
 }
-#lpImage {
+#landingPageImage {
   display: block;
   font-size: 0.75rem;
   font-weight: 100;

@@ -51,9 +51,8 @@ input {
   text-decoration: underline;
 }
 #loginPage {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  padding: 3.2rem 1rem;
   background-color: rgb(252, 243, 236);
 }
 #loginImage {
