@@ -1,8 +1,8 @@
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
+import { Injectable } from '@angular/core';
 import { map, take } from 'rxjs/operators';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

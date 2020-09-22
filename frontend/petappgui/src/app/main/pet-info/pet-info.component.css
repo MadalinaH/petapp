@@ -38,8 +38,8 @@ h4 {
 }
 #info {
   margin: auto 5rem auto 5rem;
-  padding: 0.5rem;
-  border-style: outset;
+  padding: 0.8rem;
+  border-style: none;
   border-width: thin;
   border-color: rgb(187, 189, 186);
   border-radius: 0.3125rem;

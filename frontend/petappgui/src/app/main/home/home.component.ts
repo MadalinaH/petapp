@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +12,15 @@ import { ApiService } from '../../api.service';
 export class HomeComponent implements OnInit {
   animalTriviaQuestion: string;
   animalTriviaAnswer: string;
-  constructor(private apiSevice: ApiService) {}
+  constructor(
+    private apiSevice: ApiService,
+    private cookieService: CookieService,
+    private router: Router) {}
   ngOnInit(): void {
+    const petappToken = this.cookieService.get('petapp-token');
+    if(!petappToken) {
+      this.router.navigate(['/auth/login']);
+    }
     this.getAnotherTrivia();
   }
   getAnotherTrivia(): void {

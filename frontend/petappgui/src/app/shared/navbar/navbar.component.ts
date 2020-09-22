@@ -1,7 +1,7 @@
+import { ApiService } from '../../api.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-navbar',

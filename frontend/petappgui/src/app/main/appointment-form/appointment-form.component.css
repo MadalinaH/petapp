@@ -1,6 +1,6 @@
 h2 {
   font-size: 1.75rem;
-  font-weight: 400;
+  font-weight: 300;
   color: rgb(42, 65, 71);
 }
 form {
@@ -63,7 +63,7 @@ input {
 }
 #appointmentPage {
   margin: 0 auto;
-  padding-top: 1rem;
+  padding: 1.5rem;
   overflow-x: hidden;
   background-color: #fff;
 }

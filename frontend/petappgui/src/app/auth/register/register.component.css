@@ -1,9 +1,11 @@
 h2 {
   color: rgb(42, 65, 71);
+  font-size: 1.75rem;
+  font-weight: 300;
 }
 form {
   margin: auto;
-  width: 65%;
+  width: 60%;
   height: auto;
   border-style: none;
   border-width: thin;
@@ -28,7 +30,7 @@ input {
   border-radius: 0.3125rem;
 }
 .validationError {
-  font-size: 0.80rem;
+  font-size: 0.8rem;
   font-weight: 100;
   color: rgb(216,0,0);
 }

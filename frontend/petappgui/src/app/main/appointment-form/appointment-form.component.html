@@ -1,8 +1,8 @@
 <div id="appointmentPage" class="container-fluid">
   <div class="row no-gutters align-items-center">
     <div class="col text-center">
-      <h2 *ngIf="selectedId==0"><i class="fa fa-user-md"></i> Let's go to the vet!</h2>
-      <h2 *ngIf="selectedId!=0"><i class="fa fa-user-md"></i> Wanna change something?</h2>
+      <h2 *ngIf="selectedId==0"><i class="fa fa-user-md"></i> LET'S GO TO THE VET!</h2>
+      <h2 *ngIf="selectedId!=0"><i class="fa fa-user-md"></i> WANNA CHANGE SOMETHING?</h2>
       <form id="appointmentForm"
             class="text-left mt-3"
             *ngIf="this.appointmentForm"
@@ -69,13 +69,13 @@
           <div class="col">
             <button type="button"
                     class="btn btn-danger mr-2"
-                    (click)="goBack()">Cancel
+                    (click)="goBack()">CANCEL
             </button>
           </div>
           <div class="col">
             <button type="submit"
                     class="btn btn-custom ml-2"
-                    [disabled]="!appointmentForm.valid">Save
+                    [disabled]="!appointmentForm.valid">SAVE
             </button>
           </div>
         </div>

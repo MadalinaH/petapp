@@ -1,5 +1,5 @@
 h1 {
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   font-weight: 300;
   color: rgb(51, 66, 74);
 }
@@ -9,7 +9,6 @@ h1 {
   padding: 1.5rem;
   border-radius: 3.125rem;
   font-size: 1.3rem;
-  font-weight: 500;
 }
 .button {
   display: block;

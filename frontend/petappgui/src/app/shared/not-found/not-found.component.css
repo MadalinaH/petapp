@@ -1,11 +1,12 @@
-h1, h2, h3 {
+h1, h2 {
   font-weight: 300;
   font-size: 1.8rem;
   color: rgb(51, 66, 74);
 }
 .btn-custom {
-  height: 2.5rem;
-  width: 11rem;
+  height: 4rem;
+  width: 12rem;
+  padding: 1rem;
   background-color: rgb(232, 80, 92);
   border-radius: 3.125rem;
   cursor: pointer;

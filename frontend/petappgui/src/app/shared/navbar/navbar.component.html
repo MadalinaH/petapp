@@ -1,5 +1,5 @@
 <nav id="mainNavbar" class="navbar navbar-custom navbar-expand-md fixed-top">
-  <a class="navbar-brand" routerLink="/auth/login"><i class="fa fa-paw"></i> PetBook</a>
+  <a class="navbar-brand" routerLink="/auth/login"><i class="fa fa-paw"></i> PETBOOK</a>
   <!-- TO DO - add functionality for toggle navigation -->
   <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon">
@@ -11,13 +11,13 @@
       <li class="nav-item">
         <a *ngIf="isLoggedIn$ | async"
            class="nav-link"
-           [routerLink]="'/main/pets'">Pets
+           [routerLink]="'/main/pets'">PETS
         </a>
       </li>
       <li class="nav-item">
         <a *ngIf="isLoggedIn$ | async"
            class="nav-link"
-           [routerLink]="'/main/appointments'">Appointments
+           [routerLink]="'/main/appointments'">APPOINTMENTS
         </a>
       </li>
     </ul>
@@ -25,7 +25,7 @@
       <li class="nav-item mr-auto">
         <button *ngIf="isLoggedIn$ | async"
                 class="btn btn-custom"
-                (click)="onLogout()">Log out
+                (click)="onLogout()">LOG OUT
         </button>
       </li>
     </ul>

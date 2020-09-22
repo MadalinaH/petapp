@@ -1,10 +1,10 @@
 <div id="petPage" class="container-fluid">
  <div class="row no-gutters align-items-center">
    <div class="col text-center">
-      <h2 *ngIf="selectedId==0"><i class="fa fa-paw"></i> Add another one!</h2>
-      <h2 *ngIf="selectedId!=0"><i class="fa fa-paw"></i> Edit your pet's info!</h2>
+      <h2 *ngIf="selectedId==0"><i class="fa fa-paw"></i> ADD ANOTHER ONE</h2>
+      <h2 *ngIf="selectedId!=0"><i class="fa fa-paw"></i> EDIT YOUR PET'S INFO</h2>
       <form id="petForm"
-            class="text-left mt-3"
+            class="text-left mt-1"
             *ngIf="this.petForm"
             [formGroup]="petForm"
             (ngSubmit)="onSubmit()">
@@ -92,13 +92,13 @@
         <div class="row no-gutters">
           <div class="col">
             <button class="btn btn-danger mr-2"
-                    (click)="goBack()">Cancel
+                    (click)="goBack()">CANCEL
             </button>
           </div>
           <div class="col">
             <button type="submit"
                     class="btn btn-custom ml-2"
-                    [disabled]="!petForm.valid">Save
+                    [disabled]="!petForm.valid">SAVE
             </button>
           </div>
         </div>
