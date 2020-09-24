@@ -1,12 +1,30 @@
-<nav id="mainNavbar" class="navbar navbar-custom navbar-expand-md fixed-top">
-  <a class="navbar-brand" routerLink="/auth/login"><i class="fa fa-paw"></i> PETBOOK</a>
-  <!-- TO DO - add functionality for toggle navigation -->
-  <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon">
+<nav id="mainNavbar" 
+     class="navbar navbar-custom navbar-expand-md fixed-top">
+  
+  <a class="navbar-brand" 
+     routerLink="/auth/login">
+    <i class="fa fa-paw"></i> PETBOOK
+  </a>
+
+  <button type="button"
+          class="navbar-toggler" 
+          (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed"
+          aria-controls="navLinks"
+          aria-label="Toggle navigation"
+          data-toggle="collapse" 
+          data-target="#navLinks">
+    
+    <span *ngIf="isLoggedIn$ | async"
+          class="navbar-toggler-icon">
       <i class="fa fa-bars" style="color:rgb(251, 211, 212); font-size:25px;"></i>
     </span>
+
   </button>
-  <div class="collapse navbar-collapse" id="navLinks">
+
+  <div id="navLinks"
+       class="collapse navbar-collapse"
+       [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a *ngIf="isLoggedIn$ | async"
@@ -30,4 +48,5 @@
       </li>
     </ul>
   </div>
+
 </nav>

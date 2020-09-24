@@ -1,6 +1,6 @@
 import { ApiService } from '../../api.service';
-import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 
 export class NavbarComponent implements OnInit {
+  public isCollapsed = true;
   // $ Means the property is an observable and we watch it for value changes
   isLoggedIn$: Observable<boolean>;
   constructor(
@@ -24,4 +25,7 @@ export class NavbarComponent implements OnInit {
     this.cookieService.delete('petapp-token', '/');
     this.apiService.logoutUser();
   }
+  // toggleNavbarCollapsing() {
+  //   this.navbarCollapsed = !this.navbarCollapsed;
+  // }
 }

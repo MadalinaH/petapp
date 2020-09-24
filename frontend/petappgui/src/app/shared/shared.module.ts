@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { MatDialogModule, MatDialogRef } from "@angular/material/dialog";
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -18,6 +19,7 @@ import { Routes, RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     MatDialogModule,
+    NgbModule,
     RouterModule
   ],
   providers: [CookieService]
