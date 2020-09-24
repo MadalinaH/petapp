@@ -3,14 +3,17 @@ h1 {
   font-weight: 300;
   color: rgb(51, 66, 74);
 }
+
 p {
   font-size: 1.4rem;
   font-weight: 300;
   color: rgb(51, 66, 74);
 }
+
 .jumbotron {
   width: 80%;
 }
+
 .btn-custom {
   width: 7.5rem;
   height: 2.5rem;
@@ -18,13 +21,15 @@ p {
   background-color: rgb(42, 65, 71);
   color: #fff;
 }
+
 #home {
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: rgb(233, 236, 239);
 }
+
 #firstCol {
   margin: auto 6rem auto 5rem;
   padding: 3rem;

@@ -1,9 +1,9 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { ApiService } from '../../api.service';
-import { ConfirmDialogService } from '../../confirm-dialog.service';
 import { Appointment } from '../../models/appointment';
+import { Component, OnInit } from '@angular/core';
+import { ConfirmDialogService } from '../../confirm-dialog.service';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({

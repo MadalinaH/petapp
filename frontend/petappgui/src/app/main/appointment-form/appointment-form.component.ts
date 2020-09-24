@@ -1,13 +1,13 @@
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../../api.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,
          FormControl,
          FormArray,
          Validators } from '@angular/forms';
 import { Location } from '@angular/common';
-import { Router } from '@angular/router';
-import { ApiService } from '../../api.service';
 import { Pet } from '../../models/pet';
+import { Router } from '@angular/router';
 import { Vet } from '../../models/vet';
 
 @Component({
@@ -22,9 +22,9 @@ export class AppointmentFormComponent implements OnInit {
   pets: Pet[];
   vets: Vet[];
   constructor(
-    private route: ActivatedRoute,
-    private location: Location,
     private apiService: ApiService,
+    private location: Location,
+    private route: ActivatedRoute,
     private router:Router
   ) {}
   ngOnInit(): void {

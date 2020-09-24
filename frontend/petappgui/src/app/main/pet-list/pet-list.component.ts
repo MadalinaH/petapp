@@ -1,6 +1,6 @@
+import { ApiService } from '../../api.service';
 import { Component, OnInit } from '@angular/core';
 import { I18nPluralPipe } from '@angular/common';
-import { ApiService } from '../../api.service';
 import { Pet } from '../../models/pet';
 
 @Component({

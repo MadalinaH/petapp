@@ -1,5 +1,5 @@
 <div id="petPage" class="container-fluid">
- <div class="row no-gutters align-items-center">
+ <div class="row align-items-center">
    <div class="col text-center">
       <h2 *ngIf="selectedId==0"><i class="fa fa-paw"></i> ADD ANOTHER ONE</h2>
       <h2 *ngIf="selectedId!=0"><i class="fa fa-paw"></i> EDIT YOUR PET'S INFO</h2>
@@ -16,7 +16,7 @@
                    formControlName="name">
         </div>
         <p *ngIf="petForm.controls.name.invalid"
-           class="validationError">This field cannot be empty.
+           class="validationError">This field cannot be empty
         </p>
         <div class="form-group">
           <label for="type">Dog, cat ... dragon?</label>
@@ -33,7 +33,7 @@
           </select>
         </div>
         <p *ngIf="petForm.controls.type.invalid"
-           class="validationError">This field cannot be empty.
+           class="validationError">This field cannot be empty
         </p>
         <div class="form-group">
           <label for="sex">Girl or boy?</label>
@@ -47,7 +47,7 @@
           </select>
         </div>
         <p *ngIf="petForm.controls.sex.invalid"
-           class="validationError">This field cannot be empty.
+           class="validationError">This field cannot be empty
         </p>
         <div class="form-group">
           <label for="date_of_birth">When is their birthday?</label>
@@ -57,7 +57,7 @@
                  formControlName="date_of_birth">
         </div>
         <p *ngIf="petForm.controls.date_of_birth.invalid"
-           class="validationError">This field cannot be empty.
+           class="validationError">This field cannot be empty
         </p>
         <div class="form-group">
           <label for="breed">Breed</label>
@@ -67,7 +67,7 @@
                    formControlName="breed">
         </div>
         <p *ngIf="petForm.controls.breed.invalid"
-           class="validationError">This field cannot be empty.
+           class="validationError">This field cannot be empty
         </p>
         <div class="form-group">
           <label for="microchip_no">Microchip</label>
@@ -77,7 +77,7 @@
                    formControlName="microchip_no">
         </div>
         <p *ngIf="petForm.controls.microchip_no.invalid"
-           class="validationError">This field cannot be empty.
+           class="validationError">This field cannot be empty
         </p>
         <div class="form-group">
           <label for="passport_no">Passport</label>
@@ -87,7 +87,7 @@
                    formControlName="passport_no">
         </div>
         <p *ngIf="petForm.controls.passport_no.invalid"
-           class="validationError">This field cannot be empty.
+           class="validationError">This field cannot be empty
         </p>
         <div class="row no-gutters">
           <div class="col">

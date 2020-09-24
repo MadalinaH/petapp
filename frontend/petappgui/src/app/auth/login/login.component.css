@@ -3,22 +3,24 @@ h1 {
   font-weight: 400;
   color: rgb(51, 66, 74);
 }
+
 form {
   margin: auto;
   padding: 1rem;
   width: 21.875rem;
   height: 20.3125rem;
   border-style: none;
-  border-width: thin;
   border-color: rgb(187, 189, 186);
   border-radius: 0.3125rem;
   background-color: rgb(252, 243, 236);
 }
+
 input {
   font-size: 1rem;
   font-weight: 300;
   color: rgb(51, 66, 74);
 }
+
 .form-control {
   display: block;
   width: 100%;
@@ -28,11 +30,13 @@ input {
   border-color: rgb(187, 189, 186);
   border-radius: 0.3125rem;
 }
+
 .validationError {
   font-size: 0.8rem;
   font-weight: 100;
   color: rgb(216,0,0);
 }
+
 .btn-custom {
   display: block;
   width: 100%;
@@ -41,20 +45,25 @@ input {
   cursor: pointer;
   color: #fff;
 }
-.loginLinks {
+
+.loginLink {
   font-size: 1rem;
   font-weight: 200;
   color: rgb(51, 66, 74);
   text-decoration: none;
 }
-.loginLinks:hover {
+
+.loginLink:hover {
   text-decoration: underline;
 }
+
 #loginPage {
+  height: 100%;
   overflow-x: hidden;
   padding: 3.4rem 1rem;
   background-color: rgb(252, 243, 236);
 }
+
 #loginImage {
   display: block;
   font-size: 0.75rem;

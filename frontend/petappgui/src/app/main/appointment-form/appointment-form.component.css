@@ -1,28 +1,30 @@
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.65rem;
   font-weight: 300;
   color: rgb(42, 65, 71);
 }
+
 form {
   margin: auto;
   padding: 1rem;
   width: 28.125rem;
-  height: auto;
   border-style: none;
-  border-width: thin;
   border-color: rgb(187, 189, 186);
   border-radius: 0.3125rem;
   background-color: rgb(225, 225, 225);
 }
+
 input {
   width: 100%;
   font-size: 1rem;
   font-weight: 300;
   color: rgb(51, 66, 74);
 }
+
 .form-group {
   margin: 0.625rem auto 0 auto;
 }
+
 .form-control {
   display: block;
   width: 100%;
@@ -32,6 +34,7 @@ input {
   border-color: rgb(187, 189, 186);
   border-radius: 0.3125rem;
 }
+
 .btn-custom {
   display: block;
   width: 100%;
@@ -41,27 +44,22 @@ input {
   cursor: pointer;
   color: #fff;
 }
+
 .btn-danger {
   display: block;
   width: 100%;
   height: 3.5rem;
   margin: 1.25rem auto 0 auto;
 }
-.registerLinks {
-  font-size: 1rem;
-  font-weight: 200;
-  color: rgb(51, 66, 74);
-  text-decoration: none;
-}
-.registerLinks:hover {
-  text-decoration: underline;
-}
+
 .validationError {
   font-size: 0.80rem;
   font-weight: 100;
   color: rgb(216,0,0);
 }
+
 #appointmentPage {
+  height: 100%;
   margin: 0 auto;
   padding: 1.5rem;
   overflow-x: hidden;

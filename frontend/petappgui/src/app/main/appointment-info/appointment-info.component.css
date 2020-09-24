@@ -3,25 +3,27 @@ h2 {
   font-weight: 300;
   color: rgb(51, 66, 74);
 }
+
 h4 {
   font-size: 1.3rem;
   font-weight: 300;
   color: rgb(51, 66, 74);
 }
+
 #appointmentInfo {
   margin-top: 5rem;
   overflow: hidden;
-  /* remove scroll from page */
 }
+
 #info {
   margin: auto 5rem auto 5rem;
   padding: 3rem;
-  border-style: outset;
-  border-width: thin;
+  border-style: none;
   border-color: rgb(187, 189, 186);
   border-radius: 0.3125rem;
   background-color: rgb(234, 243, 250);
 }
+
 #back, #edit, #delete {
   display: block;
   width: 99%;
@@ -29,15 +31,19 @@ h4 {
   cursor: pointer;
   color: #fff;
 }
+
 #back {
   background-color: rgb(169, 132, 150);
 }
+
 #edit {
   background-color: rgb(237, 125, 43);
 }
+
 #delete {
   background-color: rgb(182, 69, 61);
 }
+
 #appInfoImage {
   display: block;
   font-size: 0.75rem;

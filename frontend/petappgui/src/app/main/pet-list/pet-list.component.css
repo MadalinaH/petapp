@@ -3,11 +3,13 @@ h5 {
   font-weight: 400;
   color: rgb(51, 66, 74);
 }
+
 a, p, button {
   font-size: 1.1rem;
   font-weight: 400;
   color: rgb(51, 66, 74);
 }
+
 .container {
   width: 70%;
   margin: 3.75rem auto;
@@ -15,19 +17,24 @@ a, p, button {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1.25rem;
 }
+
 .btn-custom {
   width: 7.5rem;
   height: 2.5rem;
   border-radius: 50px;
   background-color: rgb(251, 211, 212);
 }
+
 #petList {
-  overflow: hidden;
+  height: 100%;
+  overflow-x: hidden;
   background-color: rgb(248, 240, 241);
 }
+
 #leftCol {
   padding-top: 14%;
 }
+
 #petListImage {
   display: block;
   font-size: 0.75rem;

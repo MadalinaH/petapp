@@ -3,39 +3,47 @@
   height: 11rem;
   border-radius: 10%;
 }
+
 .backLink {
   font-size: 1rem;
   font-weight: 200;
   color: rgb(51, 66, 74);
   text-decoration: none;
 }
+
 .backLink:hover {
   cursor: pointer;
   text-decoration: underline;
 }
+
 #petImage {
   width: 10rem;
   height: 10rem;
   border-radius: 10%;
 }
+
 span, h4 {
     color: rgb(51, 66, 74);
 }
+
 span {
   font-size: 1.7rem;
   font-weight: 400;
 }
+
 h4 {
   font-size: 1.3rem;
   font-weight: 300;
 }
+
 #petInfo {
+  height: 100%;
   padding-bottom: 1rem;
   margin: 0 auto;
   overflow-x: hidden;
   background-color: rgb(236, 236, 236);
-  /* remove scroll from page */
 }
+
 #info {
   margin: auto 5rem auto 5rem;
   padding: 0.8rem;
@@ -45,6 +53,7 @@ h4 {
   border-radius: 0.3125rem;
   background-color: rgb(236, 236, 236);
 }
+
 #addAppointment, #edit, #delete {
   display: block;
   width: 99%;
@@ -52,15 +61,19 @@ h4 {
   cursor: pointer;
   color: #fff;
 }
+
 #addAppointment {
   background-color: rgb(56, 90, 100);
 }
+
 #edit {
   background-color: rgb(255, 151, 160);
 }
+
 #delete {
   background-color: rgb(255, 79, 90);
 }
+
 #petInfoImage, #petPlaceImage {
   display: block;
   font-size: 0.75rem;
@@ -68,6 +81,7 @@ h4 {
   color: rgb(51, 66, 74);
   text-decoration: none;
 }
+
 #petPlaceImage {
   padding-left: 7rem;
 }

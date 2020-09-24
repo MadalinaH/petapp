@@ -1,4 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../../api.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,
          FormControl,
@@ -6,7 +7,6 @@ import { FormGroup,
          Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-pet-form',
@@ -18,10 +18,10 @@ export class PetFormComponent implements OnInit {
   petForm: FormGroup;
   selectedId: number;
   constructor(
-    private route: ActivatedRoute,
-    private location: Location,
     private apiService: ApiService,
-    private router:Router
+    private route: ActivatedRoute,
+    private router:Router,
+    private location: Location
   ) {}
   ngOnInit(): void {
     this.initForm();

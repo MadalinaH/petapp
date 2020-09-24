@@ -14,7 +14,7 @@
                  placeholder="Username">
         </div>
         <p *ngIf="loginForm.controls.username.invalid"
-           class=" text-left validationError">This field cannot be empty.
+           class=" text-left validationError">This field cannot be empty
         </p>
         <div class="form-group">
           <input id="password"
@@ -24,14 +24,14 @@
                  placeholder="Password">
         </div>
         <p *ngIf="loginForm.controls.password.invalid"
-           class="text-left validationError">This field cannot be empty.
+           class="text-left validationError">This field cannot be empty
         </p>
         <button type="submit"
                 class="btn btn-custom mt-4"
                 [disabled]="!loginForm.valid">LOG IN
         </button>
-        <div class="mt-3">
-          <a class="loginLinks" routerLink='/'>GO BACK</a>
+        <div>
+          <a class="loginLink" routerLink='/'>GO BACK</a>
         </div>
       </form>
     </div>
