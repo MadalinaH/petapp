@@ -25,12 +25,20 @@ export class ApiService {
   // the Behavior Subject class ensures all subscribers get the same value of the observable at any given time
   // on login and logout, we change the value of this boolean variable
   private loggedIn = new BehaviorSubject<boolean>(this.authCookieExists());
-
   // returns value of loggedIn as an observable
   get isLoggedIn() {
-     return this.loggedIn.asObservable();
+    return this.loggedIn.asObservable();
   }
 
+  
+  private logInError = new BehaviorSubject<boolean>(false);
+  get loginError() {
+    return this.logInError.asObservable();
+  }
+  setLoginError() {
+    return this.logInError.next(false);
+  }
+  
   baseUrl = 'http://127.0.0.1:8000/';
   token = this.cookieService.get('petapp-token');
   headers = new HttpHeaders({
@@ -77,7 +85,7 @@ export class ApiService {
         this.router.navigate(['/main']);
         this.cookieService.set('petapp-token', result.token, null, '/');
       },
-      error => console.log(error)
+      error => this.logInError.next(true)
     );
   }
 

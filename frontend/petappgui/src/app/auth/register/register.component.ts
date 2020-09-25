@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   formValid: boolean = false;
   constructor(
-    private apiSevice: ApiService,
+    private apiService: ApiService,
     private router: Router
   ) {}
   ngOnInit(): void {
@@ -80,7 +80,7 @@ export class RegisterComponent implements OnInit {
     registerData['username'] = this.registerForm.value['username'];
     registerData['email'] = this.registerForm.value['email'];
     registerData['password'] = this.registerForm.value['password'];
-    this.apiSevice.registerUser(registerData).subscribe(
+    this.apiService.registerUser(registerData).subscribe(
       user => this.router.navigate(['/auth/login']),
       error => console.log(error)
     )

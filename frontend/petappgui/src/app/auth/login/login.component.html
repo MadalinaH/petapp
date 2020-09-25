@@ -26,6 +26,9 @@
         <p *ngIf="loginForm.controls.password.invalid"
            class="text-left validationError">This field cannot be empty
         </p>
+        <p *ngIf="loginError$ | async"
+           class="text-center validationError">Username or password incorrect
+        </p>
         <button type="submit"
                 class="btn btn-custom mt-4"
                 [disabled]="!loginForm.valid">LOG IN

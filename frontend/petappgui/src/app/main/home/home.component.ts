@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   animalTriviaQuestion: string;
   animalTriviaAnswer: string;
   constructor(
-    private apiSevice: ApiService,
+    private apiService: ApiService,
     private cookieService: CookieService,
     private router: Router) {}
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     this.getAnotherTrivia();
   }
   getAnotherTrivia(): void {
-    this.apiSevice.getFacts().subscribe(
+    this.apiService.getFacts().subscribe(
       result => {
         // atob converts base64 encoding to utf-8
         this.animalTriviaQuestion = atob(result['results'][0]['question']);

@@ -6,6 +6,7 @@ import { FormGroup,
          FormArray,
          Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { TokenObject } from '../../models/token-object';
 
 @Component({
@@ -15,14 +16,19 @@ import { TokenObject } from '../../models/token-object';
 })
 
 export class LoginComponent implements OnInit {
+  loginError$: Observable<boolean>;
   loginForm: FormGroup;
   constructor(
-    private apiSevice: ApiService,
+    private apiService: ApiService,
     private cookieService: CookieService,
     private router: Router
   ) {}
   // On init, we check for the token and if it exists, we skip the login and redirect to main
   ngOnInit(): void {
+
+    this.apiService.setLoginError();
+    this.loginError$ = this.apiService.loginError;
+    
     const petappToken = this.cookieService.get('petapp-token');
     if(petappToken) {
       this.router.navigate(['/main']);
@@ -36,6 +42,6 @@ export class LoginComponent implements OnInit {
     })
   }
   onLogin(): void {
-    this.apiSevice.loginUser(this.loginForm.value);
+    this.apiService.loginUser(this.loginForm.value);
   }
 }
