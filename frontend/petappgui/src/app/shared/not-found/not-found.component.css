@@ -3,6 +3,7 @@ h1, h2 {
   font-size: 1.8rem;
   color: rgb(51, 66, 74);
 }
+
 .btn-custom {
   height: 4rem;
   width: 12rem;
@@ -12,13 +13,16 @@ h1, h2 {
   cursor: pointer;
   color: #fff;
 }
+
 .btn-custom:hover {
   color: rgb(51, 66, 74);
 }
+
 #notFound {
   padding: 1rem;
   overflow: hidden;
 }
+
 #image404 {
   display: block;
   font-size: 0.75rem;

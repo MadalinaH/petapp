@@ -29,12 +29,14 @@
       <li class="nav-item">
         <a *ngIf="isLoggedIn$ | async"
            class="nav-link"
+           (click)="isCollapsed = true"
            [routerLink]="'/main/pets'">PETS
         </a>
       </li>
       <li class="nav-item">
         <a *ngIf="isLoggedIn$ | async"
            class="nav-link"
+           (click)="isCollapsed = true"
            [routerLink]="'/main/appointments'">APPOINTMENTS
         </a>
       </li>
@@ -43,6 +45,7 @@
       <li class="nav-item mr-auto">
         <button *ngIf="isLoggedIn$ | async"
                 class="btn btn-custom"
+                (click)="isCollapsed = true"
                 (click)="onLogout()">LOG OUT
         </button>
       </li>

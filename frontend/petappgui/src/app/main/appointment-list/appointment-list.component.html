@@ -1,14 +1,14 @@
 <div id="appointmentList" class="container-fluid">
   <div class="row">
-    <div id="leftCol" class="col-4 text-center">
-      <p class="mt-5">Need to schedule an appointment?</p>
+    <div id="leftCol" class="col-xs-12 col-lg-4 text-center">
+      <p>Need to schedule an appointment?</p>
       <button class="btn btn-custom"
              routerLink="/main/edit-appointment"
              [queryParams]="{selectedId: 0}">
              <i class="fa fa-stethoscope"></i> YES
       </button>
     </div>
-    <div id="appointmens" class="col text-left">
+    <div class="col-xs-12 col-lg-8 text-left">
       <div class=list-group>
         <a *ngFor="let appointment of appointments"
            class="list-group-item list-group-item-action"

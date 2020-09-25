@@ -25,7 +25,4 @@ export class NavbarComponent implements OnInit {
     this.cookieService.delete('petapp-token', '/');
     this.apiService.logoutUser();
   }
-  // toggleNavbarCollapsing() {
-  //   this.navbarCollapsed = !this.navbarCollapsed;
-  // }
 }

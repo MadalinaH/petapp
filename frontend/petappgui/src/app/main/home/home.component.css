@@ -10,10 +10,6 @@ p {
   color: rgb(51, 66, 74);
 }
 
-.jumbotron {
-  width: 80%;
-}
-
 .btn-custom {
   width: 7.5rem;
   height: 2.5rem;
@@ -31,8 +27,7 @@ p {
 }
 
 #firstCol {
-  margin: auto 6rem auto 5rem;
-  padding: 3rem;
+  margin-top: 2rem;
   border-style: outset;
   border-width: thin;
   border-color: rgb(187, 189, 186);

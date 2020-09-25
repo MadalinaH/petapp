@@ -3,15 +3,19 @@
   font-weight: 100;
 	color: rgb(251, 211, 212);
 }
+
 .nav-link:hover {
 	color: rgb(251, 243, 243);
 }
+
 .nav-brand:hover {
   color: rgb(251, 243, 243);
 }
+
 .navbar-custom {
   background-color: rgb(51, 66, 74);
 }
+
 .btn-custom {
   width: 7rem;
   background-color: rgb(232, 80, 92);
@@ -19,6 +23,7 @@
   cursor: pointer;
   color: #fff;
 }
+
 .btn-custom:hover {
   color: rgb(51, 66, 74);
 }
