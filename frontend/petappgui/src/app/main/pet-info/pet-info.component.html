@@ -1,13 +1,13 @@
 <div id="petInfo" class="container-fluid">
-  <div class="row mt-3">
-    <div id="info" class="col text-left">
+  <div class="row">
+    <div id="info" class="col-xs-12 col-lg-6 text-left">
       <div class="row">
-        <div class="col text-left mt-5">
+        <div class="col-xs-12 col-md-6 text-left">
           <span>
               <i class="fa fa-paw"></i> {{pet.name}}'s info
           </span>
         </div>
-        <div class="col text-right">
+        <div class="col-xs-12 col-md-6 col-xs-text-left col-md-text-right">
           <img *ngIf="pet.pet_photo" src="{{pet.pet_photo}}" class="img-fluid petImage">
           <span *ngIf="!pet.pet_photo">
             <img id="petImage"
@@ -31,20 +31,20 @@
       <h4>Passport info: {{pet.passport_no}}</h4>
       <!-- TO DO - show all appointments for the pet -->
       <div class="row no-gutters align-items-center mt-5">
-        <div class="col-4">
+        <div class="col-xs-12 col-md-4">
           <button id="addAppointment"
                   class="btn"
                   (click)="addAppointment()">ADD APPOINTMENT
           </button>
         </div>
-        <div class="col-4">
+        <div class="ol-xs-12 col-md-4">
           <button id="edit"
                   class="btn"
                   routerLink="/main/edit-pet"
                   [queryParams]="{selectedId: pet.id}">EDIT INFO
           </button>
         </div>
-        <div class="col-4">
+        <div class="ol-xs-12 col-md-4">
           <button id="delete"
                   class="btn btn-custom"
                   (click)="deletePet()">DELETE INFO
@@ -55,7 +55,7 @@
         <a class="backLink" (click)="goBack()">GO BACK</a>
       </div>
     </div>
-    <div class="col text-center mt-5">
+    <div class="col-xs-12 col-lg-6 text-center mt-5">
       <img class="img-fluid" src="assets/images/pet_info.jpg">
       <a id="petInfoImage"
          href="https://www.freepik.com/vectors/people">Designed by stories - www.freepik.com

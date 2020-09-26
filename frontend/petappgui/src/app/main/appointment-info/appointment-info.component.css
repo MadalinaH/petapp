@@ -11,13 +11,12 @@ h4 {
 }
 
 #appointmentInfo {
-  margin-top: 5rem;
-  overflow: hidden;
+  margin: 1rem;
+  overflow-x: hidden;
 }
 
 #info {
-  margin: auto 5rem auto 5rem;
-  padding: 3rem;
+  padding: 1rem;
   border-style: none;
   border-color: rgb(187, 189, 186);
   border-radius: 0.3125rem;

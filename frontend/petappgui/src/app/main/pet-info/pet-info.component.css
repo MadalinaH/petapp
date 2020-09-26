@@ -38,15 +38,13 @@ h4 {
 
 #petInfo {
   height: 100%;
-  padding-bottom: 1rem;
-  margin: 0 auto;
+  padding: 3rem;
   overflow-x: hidden;
   background-color: rgb(236, 236, 236);
 }
 
 #info {
-  margin: auto 5rem auto 5rem;
-  padding: 0.8rem;
+  padding: 0.5rem;
   border-style: none;
   border-width: thin;
   border-color: rgb(187, 189, 186);
