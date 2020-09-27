@@ -46,3 +46,33 @@ a, p, button {
 #leftCol {
   padding-top: 7%;
 }
+
+@media (min-width: 250px) { 
+  .list-group {
+    padding: 10% 5% 0 5%;
+  }
+ }
+
+@media (min-width: 576px) { 
+  .list-group {
+    padding: 10% 10% 0 10%;
+  }
+ }
+
+@media (min-width: 768px) { 
+  .list-group {
+    padding: 10% 15% 0 15%;
+  }
+ }
+
+@media (min-width: 992px) { 
+  .list-group {
+    padding: 10% 20% 0 20%;
+  }
+ }
+ 
+ @media (min-width: 1200px) { 
+  .list-group {
+    padding: 10% 20% 0 20%;
+  }
+ }
