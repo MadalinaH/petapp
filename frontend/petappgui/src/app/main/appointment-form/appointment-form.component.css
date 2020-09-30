@@ -5,9 +5,9 @@ h2 {
 }
 
 form {
-  margin: auto;
+  margin: 1rem auto;
   padding: 1rem;
-  width: 28.125rem;
+  width: 90%;
   border-style: none;
   border-color: rgb(187, 189, 186);
   border-radius: 0.3125rem;
@@ -59,12 +59,11 @@ input {
 }
 
 #appointmentPage {
-  height: 100%;
-  margin: 0 auto;
-  padding: 1.5rem;
+  width: 90%;
   overflow-x: hidden;
   background-color: #fff;
 }
+
 #vet_id, #pet_id {
   width: 100%;
   height: 3.5rem;
@@ -75,9 +74,11 @@ input {
   border-radius: 0.3125rem;
   background-color: #fff;
 }
+
 #notes {
   height: 5.5rem;
 }
+
 #appointmentImage {
   display: block;
   font-size: 0.75rem;
@@ -85,3 +86,33 @@ input {
   color: rgb(51, 66, 74);
   text-decoration: none;
 }
+
+@media (min-width: 250px) { 
+  form {
+    width: 99%;
+  }
+ }
+
+@media (min-width: 576px) { 
+  form {
+    width: 80%;
+  }
+ }
+
+@media (min-width: 768px) { 
+  form {
+    width: 60%;
+  }
+ }
+
+@media (min-width: 992px) { 
+  form {
+    width: 95%;
+  }
+ }
+ 
+ @media (min-width: 1200px) { 
+  form {
+    width: 85%;
+  }
+ }
