@@ -1,8 +1,5 @@
 @import 'assets/scss/modules/_fonts.scss';
 
-html {
-  height: 100vh;
-}
 body {
   font-family: 'Mulish', sans-serif !important;
   font-size: 16px;
@@ -10,6 +7,7 @@ body {
   width: 100%;
   height: 100vh !important;
   margin: 0 !important;
-  padding: 0 !important;
-  padding-top: 62px !important;
+  padding: 62px 0 0 0 !important;
+  box-sizing: border-box;
+  overflow: hidden;
 }
