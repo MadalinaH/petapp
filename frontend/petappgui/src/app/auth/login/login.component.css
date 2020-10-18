@@ -1,3 +1,12 @@
+.login-page {
+  box-sizing: border-box;
+  height: 100vh;
+  align-items: center;
+  justify-items: center;
+  padding: 14rem 3rem;
+  background-color: rgb(252, 243, 236);
+}
+
 h1 {
   font-size: 4rem;
   font-weight: 400;
@@ -6,9 +15,7 @@ h1 {
 
 form {
   margin: auto;
-  padding: 1rem;
-  width: 21.875rem;
-  height: 20.3125rem;
+  width: 50%;
   border-style: none;
   border-color: rgb(187, 189, 186);
   border-radius: 0.3125rem;
@@ -32,7 +39,7 @@ input {
 }
 
 .validationError {
-  font-size: 0.8rem;
+  font-size: .8rem;
   font-weight: 100;
   color: rgb(216,0,0);
 }
@@ -46,27 +53,21 @@ input {
   color: #fff;
 }
 
-.loginLink {
+.login-link {
   font-size: 1rem;
   font-weight: 200;
   color: rgb(51, 66, 74);
   text-decoration: none;
 }
 
-.loginLink:hover {
+.loginLink:hover,
+.login-link:active {
   text-decoration: underline;
 }
 
-#loginPage {
-  height: 100%;
-  overflow-x: hidden;
-  padding: 3.4rem 1rem;
-  background-color: rgb(252, 243, 236);
-}
-
-#loginImage {
+.img-attrib {
   display: block;
-  font-size: 0.75rem;
+  font-size: .75rem;
   font-weight: 100;
   color: rgb(51, 66, 74);
   text-decoration: none;

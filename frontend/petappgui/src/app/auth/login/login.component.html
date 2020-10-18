@@ -1,50 +1,59 @@
-<div id="loginPage" class="container-fluid">
-  <div class="row align-items-center">
+<div class="container-fluid login-page">
+  <div class="row">
     <div class="col-xs-12 col-lg-6 text-center">
       <h1><i class="fa fa-paw"></i></h1>
-      <form id="loginForm"
-            class="mt-2"
-            [formGroup]="loginForm"
-            (ngSubmit)="onLogin()">
+      <form 
+        id="loginForm"
+        [formGroup]="loginForm"
+        (ngSubmit)="onLogin()"
+      >
         <div class="form-group">
-          <input id="username"
-                 type="text"
-                 class="form-control"
-                 formControlName="username"
-                 placeholder="Username">
+          <input 
+            id="username"
+            type="text"
+            class="form-control"
+            formControlName="username"
+            placeholder="Username"
+          >
         </div>
-        <p *ngIf="loginForm.controls.username.invalid"
-           class=" text-left validationError">This field cannot be empty
-        </p>
+        <p 
+          *ngIf="loginForm.controls.username.invalid"
+          class=" text-left validationError"
+        >This field cannot be empty</p>
         <div class="form-group">
-          <input id="password"
-                 type="password"
-                 class="form-control"
-                 formControlName="password"
-                 placeholder="Password">
+          <input 
+            id="password"
+            type="password"
+            class="form-control"
+            formControlName="password"
+            placeholder="Password"
+          >
         </div>
-        <p *ngIf="loginForm.controls.password.invalid"
-           class="text-left validationError">This field cannot be empty
-        </p>
-        <p *ngIf="loginError$ | async"
-           class="text-center validationError">Username or password incorrect
-        </p>
-        <button type="submit"
-                class="btn btn-custom mt-4"
-                [disabled]="!loginForm.valid">LOG IN
-        </button>
+        <p 
+          *ngIf="loginForm.controls.password.invalid"
+          class="text-left validationError"
+        >This field cannot be empty</p>
+        <p 
+          *ngIf="loginError$ | async"
+          class="text-center validationError"
+        >Username or password incorrect</p>
+        <button 
+          type="submit"
+          class="btn btn-custom mt-4"
+          [disabled]="!loginForm.valid"
+        >LOG IN</button>
         <div>
-          <a class="loginLink" routerLink='/'>GO BACK</a>
+          <a class="login-link" routerLink='/'>GO BACK</a>
         </div>
       </form>
     </div>
     <div class="col-xs-12 col-lg-6 text-center">
       <img class="img-fluid" src="assets/images/login_page.jpg">
-      <a id="loginImage"
-         href="https://www.freepik.com/vectors/people"
-         target="_blank">
-         Designed by pikisuperstar - www.freepik.com
-      </a>
+      <a 
+        class="img-attrib"
+        href="https://www.freepik.com/vectors/people"
+        target="_blank"
+      >Designed by pikisuperstar - www.freepik.com</a>
     </div>
   </div>
 </div>
