@@ -22,7 +22,7 @@ Django==3.0.8
 docutils==0.16
 entrypoints==0.3
 grpcio==1.16.1
-httplib2==0.14.0
+httplib2==0.19.0
 idna==2.8
 ifaddr==0.1.6
 iniparse==0.4
